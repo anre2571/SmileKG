@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" type="text/css" href="MainLayout.css">
+    <link id = "color" rel="stylesheet" type="text/css" href="Color1.css">
+    <link  rel="stylesheet" type="text/css" href="Content.css">
+    <link rel="stylesheet" type="text/css" href="Interaction.css">
+
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="View.js"></script>
+
+    <title>Smiles Kindergarten</title>
+  </head>
+  <body>
+  <div id = wrapper>
+    <header>
+      <div id = logo></div>
+      <div id = switch_campus>SWITCH CAMPUS</div>
+      <div id = login>LOGIN</div>
+    </header>
+    <main>
+    <section id = left>
+      <div id = news class = "flip-text" >
+        <div class="inner">
+          <div class="front">
+            新闻
+          </div>
+          <div class="back">
+            NEWS
+          </div>
+        </div>
+      </div>
+      <div id = announcements class = "flip-text">
+        <div class="inner">
+          <div class="front">
+            公告
+          </div>
+          <div class="back">
+            ANNOUNCEMENT
+          </div>
+        </div>
+      </div>
+      <div id = photo_album class = "flip-text">
+        <div class="inner">
+          <div class="front">
+            相册
+          </div>
+          <div class="back">
+            Back Side
+          </div>
+        </div>
+      </div>
+      <div id = p-c-interaction class = "flip-text">
+        <div class="inner">
+          <div class="front">
+            PARENT-CHILD INTERACTION
+          </div>
+          <div class="back">
+            Back Side
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id = middle>
+      <div id = content>
+        <!--Content for my profile-->
+        <div id="my_profile">
+          <div class="column">
+            <div id="my_profile_picture"></div>
+            <div id="my_profile_name"> Yifan Wu </div>
+            <div id="my_profile_share"> </div>
+          </div>
+          <div class="column">
+            <div id="my_profile_details">
+              <div class="mpd_contents">
+                <div class="mpd_content_title">Phone</div>
+                <div class="mpd_content">+46 1234 56789012</div>
+              </div>
+              <div class="mpd_contents">
+                <div class="mpd_content_title">Address</div>
+                <div class="mpd_content">Kantorsgatan 21 <br> Lgh 1013,  75421 Uppsala</div>
+              </div>
+              <hr>
+              <div class="mpd_contents">
+
+
+                <div class="mpd_content_title">Child</div>
+                <div class="mpd_content">Isabelle Wu</div>
+              </div>
+              <div class="mpd_contents">
+                <div class="mpd_content_title">Age </div>
+                <div class="mpd_content">2 years 3 months</div>
+              </div>
+              <div class="mpd_contents">
+                <div class="mpd_content_title">Teacher</div>
+                <div class="mpd_content">Ms. Tired Of Life</div>
+              </div>
+              <div class="mpd_contents right">
+                <div id="edit_profile">Edit</div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!--Content for Satisfaction-->
+        <div id="satisafaction_content">
+        <div id = progress>
+          <div id = bar-container class = progress-bar>
+            <div id = percentage class = progress-bar><span class = percentage>10%</span></div>
+          </div>
+        </div>
+        <!-- <div class="w3-light-grey w3-round-large">
+          <div class="w3-container w3-blue w3-round" style="width:44%">25%</div>
+        </div> -->
+        <div class = inquiry>
+          <div class = ask>1.Overall, my child enjoyed his/her experiences at Smile Kindergarten.</div>
+        </div>
+        <div class = response>
+          <div class = face-wrap>
+            <div class = arrow id = arrow-left></div>
+            <img id = strongDisagree class = face src = "face/strongDisagree.png">
+            <img id = disagree class = face src="face/disagree.png">
+            <img id = neutral class = face src="face/neutral.png">
+            <img id = agree class = face src="face/agree.png">
+            <img id = strongAgree class = face src = "face/strongAgree.png">
+            <div class = arrow id = arrow-right></div>
+          </div>
+        </div>
+      </div>
+        <!--Content for Payments-->
+        <div id="payments_content">
+
+          <h2>Pending Payment</h2>
+          <table class="w3-table w3-striped w3-bordered">
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Payment</th>
+            </tr>
+            <tr>
+              <td>2/7/2020</td>
+              <td>18:46</td>
+              <td>Course registration (2020 Autumn)</td>
+              <td>CNY 15,000</td>
+              <td><button class = "btn">Pay</button></td>
+            </tr>
+            <tr>
+              <td>21/7/2020</td>
+              <td>11:16</td>
+              <td>Spring field trip</td>
+              <td>CNY 1,000</td>
+              <td><button class = "btn">Pay</button></td>
+            </tr>
+            <tr>
+              <td>01/8/2020</td>
+              <td>09:16</td>
+              <td>Food service (Autumn 2020)</td>
+              <td>CNY 3,000</td>
+              <td><button class = "btn">Pay</button></td>
+            </tr>
+            <tr>
+              <td>04/8/2020</td>
+              <td>18:35</td>
+              <td>Weekend event</td>
+              <td>CNY 500</td>
+              <td><button class = "btn">Pay</button></td>
+            </tr>
+            <tr>
+              <td>12/8/2020</td>
+              <td>14:18</td>
+              <td>Field trip</td>
+              <td>CNY 1,200</td>
+              <td><button class = "btn">Pay</button></td>
+            </tr>
+          </table>
+
+          <h2>Payment History</h2>
+          <table class="w3-table w3-striped w3-bordered">
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Contract (PDF)</th>
+            </tr>
+            <tr>
+              <td>2/7/2020</td>
+              <td>15:12</td>
+              <td>Course registration (2020 Autumn)</td>
+              <td>CNY 15,000</td>
+              <td><button class = "btn">Download</button></td>
+            </tr>
+            <tr>
+              <td>21/7/2020</td>
+              <td>05:18</td>
+              <td>Spring field trip</td>
+              <td>CNY 1,000</td>
+              <td><button class = "btn">Download</button></td>
+            </tr>
+            <tr>
+              <td>01/8/2020</td>
+              <td>10:11</td>
+              <td>Food service (Autumn 2020)</td>
+              <td>CNY 3,000</td>
+              <td><button class = "btn">Download</button></td>
+            </tr>
+            <tr>
+              <td>04/8/2020</td>
+              <td>12:12</td>
+              <td>Weekend event</td>
+              <td>CNY 500</td>
+              <td><button class = "btn">Download</button></td>
+            </tr>
+            <tr>
+              <td>12/8/2020</td>
+              <td>08:41</td>
+              <td>Field trip</td>
+              <td>CNY 1,200</td>
+              <td><button class = "btn">Download</button></td>
+            </tr>
+          </table>
+
+          <div class="container">
+            <div class="chevron"></div>
+          </div>
+        </div>
+
+      </div> <!--end of content section-->
+    </section>
+    <section id = right>
+      <div id = carousel class = "no_content"></div>
+      <div id = schedule class = "flip-text">
+        <div class="inner">
+          <div class="front">
+            课表
+          </div>
+          <div class="back">
+            Back Side
+          </div>
+        </div>
+      </div>
+      <div id = restaurant class = "flip-text">
+        <div class="inner">
+          <div class="front">
+            RESTAURANT
+          </div>
+          <div class="back">
+            Back Side
+          </div>
+        </div>
+      </div>
+      <div id = course class = "flip-text">
+        <div class="inner">
+          <div class="front">
+            CLASS
+          </div>
+          <div class="back">
+            Back Side
+          </div>
+        </div>
+      </div>
+      <div id = events class = "flip-text">
+        <div class="inner">
+          <div class="front">
+            EVENTS
+          </div>
+          <div class="back">
+            EVENTS
+          </div>
+        </div>
+      </div>
+      <div id = counseling class = "flip-text">
+        <div class="inner">
+          <div class="front">
+            COUNSELLING
+          </div>
+          <div class="back">
+            Back Side
+          </div>
+        </div>
+      </div>
+      <div id = contact class = "flip-text">
+        <div class="inner">
+          <div class="front">
+            CONTACT
+          </div>
+          <div class="back">
+            Back Side
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+:root{
+    --grid-gap: 10px;
+    --half-gap: calc(var(--grid-gap)/2);
+}
+
+*{
+    margin:0;
+    box-sizing: border-box;
+    /*border: #ffffff 1px dotted;*/
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#wrapper{
+    width: 100%;
+    height: 100vh;
+    /*resize: both;*/
+    /*overflow: hidden;*/
+    padding: var(--half-gap);
+    text-align: center;
+}
+
+header{
+    height: 12%;
+    display: flex;
+
+    /*display: grid;
+    grid-template-areas:
+            'logo goto_main logout';
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-gap: var(--grid-gap);
+    padding: var(--half-gap);*/
+}
+header>*{
+    margin: var(--half-gap);
+}
+
+main{
+    display: flex;
+    height: 88%;
+}
+
+#logo, #logout{
+    flex: 1;
+}
+#goto_main{
+    flex: 5;
+}
+
+#left{
+    display: grid;
+    grid-template-areas:
+        'profile'
+        'payments'
+        'feedback';
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: var(--grid-gap);
+    flex: 1;
+    padding: var(--half-gap);
+}
+
+#middle{
+    flex: 0;
+    display: flex;
+    padding: var(--half-gap) 0 var(--half-gap) 0;
+    overflow:hidden;
+}
+
+#right{
+    display:grid;
+    grid-template-areas:
+            'cute_baby notifications'
+            'courses notifications'
+            'attendance contact';
+    grid-template-rows: 4.3fr 1fr 1fr;
+    grid-gap: var(--grid-gap);
+    flex: 2;
+    padding: var(--half-gap);
+}
+
+#left.content_view{
+    flex: 1;
+}
+
+#middle.content_view{
+    padding: var(--half-gap);
+    flex: 5;
+}
+
+#right.content_view {
+    flex: 1;
+    grid-template-areas:
+        'cute_baby'
+        'courses'
+        'attendance'
+        'notifications'
+        'contact';
+    grid-template-rows: 3fr 2fr 2fr 1fr 1fr;
+}
+@media (max-width: 800px){
+    #right{
+        flex:1;
+        grid-template-areas:
+                'cute_baby'
+                'courses'
+                'attendance'
+                'notifications'
+                'contact';
+        grid-template-rows: 3fr 2fr 2fr 1fr 1fr;
+    }
+}
+#logo{
+    grid-area: logo;
+}
+#goto_main{
+    grid-area: goto_main;
+}
+#logout{
+    grid-area: logout;
+}
+#profile{
+    grid-area: profile;
+}
+#payments{
+    grid-area: payments;
+}
+#feedback{
+    grid-area: feedback;
+}
+#cute_baby{
+    grid-area: cute_baby;
+}
+#courses{
+    grid-area: courses;
+}
+#attendance{
+    grid-area: attendance;
+}
+#notifications{
+    grid-area: notifications;
+}
+#contact{
+    grid-area: contact;
+}
+#content{
+    flex: 1;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
