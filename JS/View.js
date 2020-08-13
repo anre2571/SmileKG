@@ -51,7 +51,8 @@ $(document).ready(function(){
             }
 
             let id = this.id;
-            $(this).attr('src','face/'+id+'-click.png');
+           let d = $(this).attr('src','dummyPictures/face/'+id+'-click.png');
+           console.log(d);
             $(this).addClass('clicked');
         });
     };
