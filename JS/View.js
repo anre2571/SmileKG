@@ -46,7 +46,7 @@ $(document).ready(function(){
             if($('.clicked').length>0){
                 let clickedId = $('.clicked').attr('id');
                 console.log(clickedId);
-                $('.clicked').attr('src','face/'+clickedId+'.png');
+                $('.clicked').attr('src','dummyPictures/face/'+clickedId+'.png');
                 $('.clicked').removeClass('clicked');
             }
 
@@ -112,7 +112,7 @@ $(document).ready(function(){
         // 1. Smiley emoji reset
         if($('.clicked').length>0){
             let clickedId = $('.clicked').attr('id');
-            $('.clicked').attr('src','face/'+clickedId+'.png');
+            $('.clicked').attr('src','dummyPictures/face/'+clickedId+'.png');
             $('.clicked').removeClass('clicked');
         }
         if(j<10){j++;}
