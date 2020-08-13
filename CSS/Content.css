@@ -28,12 +28,12 @@
     height:40%;
     width:48%;
     background-image: url("../dummyPictures/Yifan_Wu24.jpg");
-    background-size: contain;
+    background-size:contain;
     background-repeat: no-repeat;
 }
 #my_profile_name{
     height:10%;
-    width:55%;
+    width:48%;
     margin-top:1%;
     background-color: #FFC805;
     display: flex;
@@ -51,12 +51,12 @@
 }
 #my_profile_details{
     color:white;
-    height:70%;
+    height:60%;
     width:80%;
     background-color: #5F5F59;
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 18px;
 
 }

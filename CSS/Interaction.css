@@ -9,6 +9,10 @@
     transition: flex-grow .5s;
     transition-timing-function: ease-out;
 }
+#left,#middle,#right{
+    transition: flex-grow .2s;
+    transition-timing-function: ease-out;
+}
 
 .inner {
     transition: transform .6s;
@@ -38,26 +42,6 @@
     transform-origin: right bottom;
 }
 
-/*.flip-card:hover:not(.active) .inner {
-    transform: rotateY(180deg);
-    transition-delay: .3s;
-    box-shadow: -2px 2px 5px 5px rgba(0,0,0,0.2);
-}
-.flip-card .front{
-    background: var(--dark);
-    color: var(--brightest);
-    transition: background .6s, color .6s;
-}
-
-.flip-card .back {
-    transform: rotateY(180deg);
-    background: var(--brightest);
-    color: var(--darkest);
-}*/
-/*.active .front{
-    background: var(--brightest);
-    color: var(--darkest);
-}*/
 
 /*##########   flip text   ##########*/
 

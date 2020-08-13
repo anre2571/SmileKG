@@ -19,7 +19,6 @@ body {
 
 header{
     height: 12%;
-
     display: grid;
     grid-template-areas:
         'logo switch_campus login';
@@ -43,6 +42,15 @@ main{
     text-align: center;
     font-size: 1.2em;
    /* font-weight: 550;*/
+}
+#switch_campus_options {
+    margin-left: 5%;
+    display: flex;
+    width:60%;
+    flex-direction: row;
+}
+.campuses{
+    flex:1
 }
 
 .left{
