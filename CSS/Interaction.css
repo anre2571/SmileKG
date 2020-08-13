@@ -3,9 +3,9 @@
 }*/
 
 
-#left,
-#middle,
-#right{
+.left,
+.middle,
+.right{
     transition: flex-grow .5s;
     transition-timing-function: ease-out;
 }

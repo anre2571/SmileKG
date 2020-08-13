@@ -1,5 +1,5 @@
 /*css for my profile*/
-#content{
+.content{
     flex: 1;
     display:flex;
     flex-direction: column;
@@ -8,12 +8,13 @@
     background-color: #FFFDF4;
 }
 
-#my_profile{
+#profile_content{
     background-color: #353531;
     width:100%;
     height:100%;
     display: flex;
     flex-direction: row;
+
 
 }
 .column{
@@ -26,7 +27,7 @@
 #my_profile_picture{
     height:40%;
     width:48%;
-    background-image: url("dummyPictures/Yifan_Wu24.jpg");
+    background-image: url("../dummyPictures/Yifan_Wu24.jpg");
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -44,7 +45,7 @@
     height:200px;
     width:200px;
     margin-top:5%;
-    background-image: url("dummyPictures/qr.png");
+    background-image: url("../dummyPictures/qr.png");
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -67,7 +68,7 @@
     align-items: center;
     justify-content: center;
 }
-.right{
+.right_aligned{
     display: flex;
     justify-content: flex-end;
 
@@ -95,10 +96,8 @@ hr{
 }
 
 /*
-css for satisfaction*/
-#satisafaction_content{
-    display: none;
-}
+css for feedback*/
+
 #progress{
     width: 350px;
     height: 32px;
@@ -187,7 +186,7 @@ css for satisfaction*/
 
 /*css for payments*/
 #payments_content{
-    display: none;
+
 }
 table {
     border-collapse: collapse;

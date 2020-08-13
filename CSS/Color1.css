@@ -49,11 +49,11 @@
     color: var(--brightest);
 }*/
 
-/*#left>*:not(.active), #right>*:not(.active){
+/*.left>*:not(.active), .right>*:not(.active){
     background: var(--dark);
     color: var(--brightest);
 }*/
-#content{
+.content{
     background: var(--content);
 }
 

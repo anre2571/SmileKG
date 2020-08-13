@@ -6,14 +6,40 @@ let initsize={
 }
 let collector = [];
 $(document).ready(function(){
-    $('#right>* , #left>*').click(function(){
+    /*Show only main home on launch*/
+    $("main").show();
+    $("myhome").hide();
+
+
+    $('#right,.right>* , #left,.left>*').click(function(event){
         if($(this).hasClass('no_content')) return;
 
-        if(!$('#middle').hasClass('content_view') || $(this).hasClass('active')){
+       /*choose which section to display*/
+        let choice = '#'+ event.target.id + '_content';
+        console.log(choice);
+        $('#content>*').hide();
+        $(choice).show();
+
+
+        if(!$('.middle').hasClass('content_view') || $(this).hasClass('active')){
             changeMode($(this));
         }
         toggleActive($(this));
     });
+
+    /*Links the login button to my home view*/
+        $('#login').click(function() {
+            $("main").hide();
+            $("myhome").show();
+        });
+    /*Links the logo main homepage*/
+        $('#logo').click(function() {
+            $("myhome").hide();
+            $("main").show();
+        });
+
+
+
     // When an emoji clicked, it is colored.
     function faceSwitch(){
         $('.face').click(function(){
@@ -118,7 +144,9 @@ $(document).keypress(function(e) {
     toggleColor();
   }
 });
+
 function changeMode(obj){
+    $('.left, .right, .middle').toggleClass('content_view');
     $('#left, #right, #middle').toggleClass('content_view');
     //$('#ch4, #ch5, #ch6').toggleClass('content_view');
 }
@@ -130,13 +158,13 @@ function toggleActive(obj){
 function toggleColor(){
 	$('#color').remove();
 	if (colorState === 0) {
-		$('head').append('<link id = "color" rel="stylesheet" type="text/css" href="Color1.css">');
+		$('head').append('<link id = "color" rel="stylesheet" type="text/css" href="../CSS/Color1.css">');
 		colorState = 1;
 	} else if (colorState === 1) {
-		$('head').append('<link id = "color" rel="stylesheet" type="text/css" href="Color3.css">');
+		$('head').append('<link id = "color" rel="stylesheet" type="text/css" href="../CSS/Color3.css">');
 		colorState = 2;
 	    } else {
-		$('head').append('<link id = "color" rel="stylesheet" type="text/css" href="Color1.css">');
+		$('head').append('<link id = "color" rel="stylesheet" type="text/css" href="../CSS/Color1.css">');
 		colorState = 0;
 	}
 }

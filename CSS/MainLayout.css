@@ -31,6 +31,7 @@ header{
 main{
     display: flex;
     height: 88%;
+
 }
 
 #wrapper{
@@ -44,9 +45,8 @@ main{
    /* font-weight: 550;*/
 }
 
-#left{
+.left{
     flex: 1;
-
     display: grid;
     grid-template-areas:
             'news announcements'
@@ -58,14 +58,14 @@ main{
     padding: var(--half-gap);
 }
 
-#middle{
+.middle{
     flex: 0;
     display: flex;
     padding: var(--half-gap) 0 var(--half-gap) 0;
     overflow:hidden;
 }
 
-#right{
+.right{
     flex: 2;
 
     display:grid;
@@ -79,7 +79,7 @@ main{
     padding: var(--half-gap);
 }
 
-#left.content_view{
+.left.content_view{
     grid-template-areas:
         'news'
         'announcements'
@@ -88,12 +88,12 @@ main{
     /*grid-template-rows: 1fr 1fr 2fr 2fr;*/
 }
 
-#middle.content_view{
+.middle.content_view{
     padding: var(--half-gap);
     flex: 5;
 }
 
-#right.content_view {
+.right.content_view {
     flex: 1;
     grid-template-areas:
         'schedule'
@@ -105,11 +105,11 @@ main{
     grid-template-rows: 1fr 1fr 1fr 2fr 1fr 1fr;
     grid-template-columns: 1fr;
 }
-#right.content_view > #carousel{
+.right.content_view > #carousel{
     display: none;
 }
 @media (max-width: 800px){
-    #right{
+    .right{
         flex:1;
         grid-template-areas:
             'carousel'
@@ -125,12 +125,19 @@ main{
 
 #logo{
     grid-area: logo;
+
 }
 #switch_campus{
     grid-area: switch_campus;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #login{
     grid-area: login;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #news{
     grid-area: news;
@@ -168,13 +175,13 @@ main{
 #contact{
     grid-area: contact;
 }
-#content{
+.content{
     flex: 1;
     display:none;
     align-items: center;
     justify-content: center;
 }
-.content_view>#content{
+.content_view>.content{
     display: flex;
 }
 
@@ -196,7 +203,7 @@ main{
 }
 
 #logo{
-    background-image: url("logo.png");
+    background-image: url("../dummyPictures/logo.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -204,13 +211,13 @@ main{
 
 #carousel{
 
-    background-image: url("dummyPictures/carousel.png");
+    background-image: url("../dummyPictures/carousel.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 #photo_album{
-    background-image: url("dummyPictures/album.png");
+    background-image: url("../dummyPictures/album.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

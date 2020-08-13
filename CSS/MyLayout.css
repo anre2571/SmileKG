@@ -1,4 +1,4 @@
-:root{
+/*:root{
     --grid-gap: 10px;
     --half-gap: calc(var(--grid-gap)/2);
 }
@@ -6,7 +6,7 @@
 *{
     margin:0;
     box-sizing: border-box;
-    /*border: #ffffff 1px dotted;*/
+    !*border: #ffffff 1px dotted;*!
 }
 
 body {
@@ -20,8 +20,8 @@ body {
 #wrapper{
     width: 100%;
     height: 100vh;
-    /*resize: both;*/
-    /*overflow: hidden;*/
+    !*resize: both;*!
+    !*overflow: hidden;*!
     padding: var(--half-gap);
     text-align: center;
 }
@@ -30,35 +30,42 @@ header{
     height: 12%;
     display: flex;
 
-    /*display: grid;
+    !*display: grid;
     grid-template-areas:
             'logo goto_main logout';
     grid-template-columns: 1fr 5fr 1fr;
     grid-gap: var(--grid-gap);
-    padding: var(--half-gap);*/
+    padding: var(--half-gap);*!
 }
 header>*{
     margin: var(--half-gap);
 }
 
-main{
-    display: flex;
-    height: 88%;
-}
 
 #logo, #logout{
     flex: 1;
 }
 #goto_main{
     flex: 5;
-}
+}*/
 
+myhome{
+    display: flex;
+    height: 88%;
+
+}
+.my_home_section{
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #left{
     display: grid;
     grid-template-areas:
-        'profile'
-        'payments'
-        'feedback';
+            'profile'
+            'payments'
+            'feedback';
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: var(--grid-gap);
     flex: 1;
@@ -96,11 +103,11 @@ main{
 #right.content_view {
     flex: 1;
     grid-template-areas:
-        'cute_baby'
-        'courses'
-        'attendance'
-        'notifications'
-        'contact';
+            'cute_baby'
+            'courses'
+            'attendance'
+            'notifications'
+            'contact';
     grid-template-rows: 3fr 2fr 2fr 1fr 1fr;
 }
 @media (max-width: 800px){
@@ -126,31 +133,47 @@ main{
 }
 #profile{
     grid-area: profile;
+    background-color: #FFC700;
 }
 #payments{
     grid-area: payments;
+    background-color: #222A32;
+    color: white;
 }
 #feedback{
     grid-area: feedback;
+    background-color: #2F2B2B;
+    color:white;
 }
 #cute_baby{
     grid-area: cute_baby;
+    color:white;
+    background-image: url("../dummyPictures/cute baby.png");
+    background-size: cover;
 }
 #courses{
     grid-area: courses;
+    background-color: #FFC700;
 }
 #attendance{
     grid-area: attendance;
+    background-color: #352525;
+    color: white;
 }
 #notifications{
     grid-area: notifications;
+    background-color: #E5E5E5;
 }
-#contact{
+#mycontact{
     grid-area: contact;
+    background-color: #222A32;
+    color: white;
 }
 #content{
     flex: 1;
     display:flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #FFFDF4;
 }
