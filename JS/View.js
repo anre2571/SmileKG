@@ -9,6 +9,7 @@ $(document).ready(function(){
     /*Show only main home on launch*/
     $("main").show();
     $("myhome").hide();
+    $("#general_homepage_section").hide();
 
 
 
@@ -47,13 +48,27 @@ $(document).ready(function(){
 
     /*Links the login button to my home view*/
         $('#login').click(function() {
+            if($(this).text() === "LOGIN"){
+                $(this).text("LOGOUT");
+            } else{
+                $(this).text("LOGIN");
+                $( "#logo" ).trigger( "click" );
+                return;
+            }
             $("main").hide();
+            $("#switch_campus_options").hide();
+            $("#general_homepage_section").show();
             $("myhome").show();
         });
     /*Links the logo main homepage*/
-        $('#logo').click(function() {
+        $('#logo, #general_homepage, #go_to_home_title').click(function() {
+            if($("login").text() === "LOGOUT"){
+                //add my home button
+            }
             $("myhome").hide();
             $("main").show();
+            $("#switch_campus_options").show();
+            $("#general_homepage_section").hide();
         });
 
     //*When edit btn is clicked*/

@@ -2,7 +2,7 @@
     --darkest:   #353531;
     --dark:		 #353531;
     --darkBlue:  #0C2145;
-    --midGray:   #353531;
+    --midGray:   #595959;
     --midRed:  	 #C0453F;
     --midGreen:  #69AC38;
     --accent:    #FFC805;
@@ -40,8 +40,9 @@
     color: white;
 }
 #login{
-    background: var(--darkest);
+    background: var(--midGray);
     color: white;
+    cursor: pointer;
 }
 
 /*#logo, #switch_campus, #goto_main, #login, #logout{
