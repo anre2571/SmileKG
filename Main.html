@@ -146,9 +146,9 @@
   </main>
     <myhome> <!--We should rename the classes/ ids &#45;&#45; too many repeated -->
       <section id = "left">
-        <div id = profile class = "my_home_section">Profile</div>
-        <div id = payments class = "my_home_section">Payments</div>
-        <div id = feedback class = "my_home_section">Feedback</div>
+        <div id = "profile" class = "my_home_section">Profile</div>
+        <div id = "payments" class = "my_home_section">Payments</div>
+        <div id = "feedback" class = "my_home_section">Feedback</div>
       </section>
 
       <section id = "middle">
@@ -273,6 +273,11 @@
               </tr>
             </table>
 
+            <!--animated downarrow-->
+            <div class="container">
+              <div class="chevron"></div>
+            </div>
+
             <h2>Payment History</h2>
             <table class="w3-table w3-striped w3-bordered">
               <tr>
@@ -319,21 +324,234 @@
               </tr>
             </table>
 
+
+          </div>
+
+          <!--cute baby section-->
+          <div id = "cute_baby_content">
+            <!--Ability test content-->
+            <!--nav buttons and navbar-->
+            <div id = navigationButtons>
+              <button class="navbtnDaily">Daily Data
+              </button>
+              <button class="navbtnAbility">Ability Test
+              </button>
+              <button class="navbtnPhsysical">Physical Development
+              </button>
+              <br>
+              <button class="navback">BACK</button>
+              <div class="abilitynav">Physical Milestones</div>
+              <button class="navforward">FORWARD</button>
+            </div>
+
+            <!--Ability test physical-->
+            <div class="abilityPhysical">
+              <table>
+                <tr>
+                  <td>Walking on tip toes</td>
+                  <td><label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Walking backwards</td>
+                  <td><label class="container">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Spinning counter-clockwise</td>
+                  <td><label class="container">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Kicking a ball</td>
+                  <td><label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tummy roll</td>
+                  <td><label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!--ability test social-->
+            <div class="abilitySocial">
+              <table>
+                <tr>
+                  <td>Want to act like their friends and seek their approval</td>
+                  <td><label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Become jealous of other people spending time with "their" firends</td>
+                  <td><label class="container">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Follow the rules most of the time and may critisize kids who don't follow rules</td>
+                  <td><label class="container">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Enjoy showing off; they'll sing, dance or be silly to get attention</td>
+                  <td><label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>May have tantrums or get angry if they thing they're not being listened to</td>
+                  <td><label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!--Ability test Cognitive-->
+            <div class="abilityCognitive">
+              <table>
+                <tr>
+                  <td>Find hidden items</td>
+                  <td><label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Stick with an activity for 15 minutes and finish a short project</td>
+                  <td><label class="container">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Spinning counter-clockwise</td>
+                  <td><label class="container">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Recognize and name colors</td>
+                  <td><label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Recognize and name shapes</td>
+                  <td><label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!--Ability test Language-->
+            <div class="abilityLanguage">
+              <table>
+                <tr>
+                  <td>Know the letters of the alphabet and letter sounds</td>
+                  <td><label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Know that stories have a beginning, middle, and end</td>
+                  <td><label class="container">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tell stories, jokes, and riddles, and may understand simple puns</td>
+                  <td><label class="container">
+                    <input type="checkbox" checked="checked">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Talk about opposites and compare things</td>
+                  <td><label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Talk about things that are going to happen and things that have already happened.</td>
+                  <td><label class="container">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!--animated downarrow-->
             <div class="container">
               <div class="chevron"></div>
             </div>
-          </div>
+
+            <br>
+
+            <form>
+              <textarea>Comments</textarea>
+            </form>
+
+            </div>
+
 
         </div>
         <div class="content_view_close"></div>
       </section>
 
       <section id = "right">
-        <div id = cute_baby class = "my_home_section right_section">cute Baby</div>
-        <div id = courses class = "my_home_section right_section">Courses</div>
-        <div id = attendance class = "my_home_section right_section">Attendance</div>
-        <div id = notifications class = "my_home_section right_section">Notifications</div>
-        <div  id= mycontact class = "my_home_section right_section">Contact</div>
+        <div id = "cute_baby" class = "my_home_section right_section">cute Baby</div>
+        <div id = "courses" class = "my_home_section right_section">Courses</div>
+        <div id = "attendance" class = "my_home_section right_section">Attendance</div>
+        <div id = "notifications" class = "my_home_section right_section">Notifications</div>
+        <div  id= "mycontact" class = "my_home_section right_section">Contact</div>
       </section>
     </myhome>
   </div>

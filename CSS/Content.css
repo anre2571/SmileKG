@@ -197,6 +197,10 @@ css for feedback*/
 #payments_content{
 
 }
+h2 {
+    color: #ffffff;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -209,10 +213,11 @@ th, td {
     font-family: Arial, Helvetica, sans-serif
 }
 
-tr:nth-child(even) {background-color: #f2f2f2;}
+tr:nth-child(even) {background-color: #e5e5e5;}
+tr:nth-child(odd) {color: white;}
 
 .btn{
-    background-color: #43464B;
+    background-color: #ffc700;
     border: none;
     color: white;
     padding: 8px 16px;
@@ -221,7 +226,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     display: inline-block;
 }
 button:hover {
-    filter:invert(100%);
+    background-color: #352525;
 }
 
 :root {--base: 0.6rem;}
@@ -248,7 +253,7 @@ button:hover {
     top: 0;
     height: 50%;
     width: 50%;
-    background: #43464B;
+    background: #ffc700;
 }
 
 .chevron:before {
@@ -278,3 +283,173 @@ button:hover {
     }
 }
 
+/*css for cute baby*/
+.navbtnDaily, .navbtnAbility, .navbtnPhsysical, .navback, .navforward, .abilitynav {
+    background-color: #ffc700;
+    border: none;
+    color: white;
+    margin-bottom: 5px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+tr:nth-child(even) {background-color: #e5e5e5;}
+
+.abilityPhysical {
+    display:initial;
+}
+.abilitySocial {
+    display:none;
+}
+.abilityCognitive {
+    display:none;
+}
+.abilityLanguage {
+    display:none;
+}
+
+.container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ffc700;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #ffc700;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: #353531;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+:root {--base: 0.6rem;}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 5vh;
+}
+
+.chevron {
+    position: absolute;
+    width: calc(var(--base) * 3.5);
+    height: calc(var(--base) * 0.8);
+    opacity: 0;
+    animation: move-chevron 2s ease-out infinite;
+}
+
+.chevron:before,
+.chevron:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 50%;
+    width: 50%;
+    background: #ffc700;
+}
+
+.chevron:before {
+    left: 0;
+    transform: skewY(30deg);
+}
+
+.chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skewY(-30deg);
+}
+
+@keyframes move-chevron {
+    25% {
+        opacity: 1;
+    }
+    33.3% {
+        opacity: 1;
+        transform: translateY(calc(var(--base) * 1.2));
+    }
+    66.6% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #e5e5e5;
+    font-size: 16px;
+    resize: none;
+}

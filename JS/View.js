@@ -189,4 +189,58 @@ function toggleColor(){
 	}
 }
 
+//Ability test section, show/hide physical,social,cognitive,language
+var navcounter = 0;
+$(document).ready(function(){
 
+    $(".navforward").click(function(){
+        if (navcounter === 4) {
+            navcounter = 1;
+        } else {
+            navcounter++;
+        }
+        switchAbility(); console.log(navcounter);
+    });
+
+    $(".navback").click(function(){
+        if (navcounter === 0) {
+            navcounter = 3;
+        } else {
+            navcounter--;
+        }
+        switchAbility(); console.log(navcounter);
+    });
+});
+
+function switchAbility() {
+    switch(navcounter) {
+        case 1:
+            $(".abilityPhysical").css("display", "none");
+            $(".abilitySocial").css("display", "initial");
+            $(".abilityCognitive").css("display", "none");
+            $(".abilityLanguage").css("display", "none");
+            $(".abilitynav").text("Social Milestones");
+            break;
+        case 2:
+            $(".abilityPhysical").css("display", "none");
+            $(".abilitySocial").css("display", "none");
+            $(".abilityCognitive").css("display", "initial");
+            $(".abilityLanguage").css("display", "none");
+            $(".abilitynav").text("Cognitive Milestones");
+            break;
+        case 3:
+            $(".abilityPhysical").css("display", "none");
+            $(".abilitySocial").css("display", "none");
+            $(".abilityCognitive").css("display", "none");
+            $(".abilityLanguage").css("display", "initial");
+            $(".abilitynav").text("Language Milestones");
+            break;
+        default:
+            $(".abilityPhysical").css("display", "initial");
+            $(".abilitySocial").css("display", "none");
+            $(".abilityCognitive").css("display", "none");
+            $(".abilityLanguage").css("display", "none");
+            $(".abilitynav").text("Physical Milestones");
+            break;
+    }
+}
