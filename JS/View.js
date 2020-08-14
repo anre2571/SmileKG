@@ -11,6 +11,8 @@ $(document).ready(function(){
     $("myhome").hide();
 
 
+
+
     $('#right,.right>* , #left,.left>*').click(function(event){
         if($(this).hasClass('no_content')) return;
 
@@ -53,6 +55,18 @@ $(document).ready(function(){
             $("myhome").hide();
             $("main").show();
         });
+
+    //*When edit btn is clicked*/
+    $("#edit_profile").click(function(){
+      if($(this).text() === "Save"){
+          $(this).text("Edit");
+          $('.mpd_content').attr('contenteditable','false');
+
+      } else {
+          $(this).text("Save");
+          $('.mpd_content').attr('contenteditable', 'true');
+      }
+    });
 
 
 
