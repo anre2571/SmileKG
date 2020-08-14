@@ -41,6 +41,7 @@ $(document).ready(function(){
     /*Close content view with close btn*/
     $('.content_view_close').click(function(){
         changeMode();
+        $('.active').removeClass('active');
     });
 
     /*Links the login button to my home view*/
