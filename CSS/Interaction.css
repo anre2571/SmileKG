@@ -9,10 +9,10 @@
     transition: flex-grow .5s;
     transition-timing-function: ease-out;
 }
-#left,#middle,#right{
+/*#left,#middle,#right{
     transition: flex-grow .2s;
     transition-timing-function: ease-out;
-}
+}*/
 
 .inner {
     transition: transform .6s;

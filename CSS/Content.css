@@ -25,8 +25,17 @@
     align-items: center;
 }
 #my_profile_picture{
-    height:40%;
-    width:48%;
+    height:100%;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex:0.4;
+
+}
+#photo{
+    height:250px;
+    width:250px;
     background-image: url("../dummyPictures/Yifan_Wu24.jpg");
     background-size:contain;
     background-repeat: no-repeat;
@@ -34,7 +43,7 @@
 #my_profile_name{
     height:10%;
     width:48%;
-    margin-top:1%;
+    margin-top:5px;
     background-color: #FFC805;
     display: flex;
     justify-content: center;
@@ -44,7 +53,7 @@
 #my_profile_share{
     height:200px;
     width:200px;
-    margin-top:5%;
+    margin-top:10px;
     background-image: url("../dummyPictures/qr.png");
     background-repeat: no-repeat;
     background-size: contain;

@@ -16,15 +16,31 @@ $(document).ready(function(){
 
        /*choose which section to display*/
         let choice = '#'+ event.target.id + '_content';
-        console.log(choice);
+
         $('#content>*').hide();
+        $('.my_home_section').css({"width":"100%","margin":"0%"});
+
         $(choice).show();
 
+        if(!$(this).hasClass('active')) {
+
+            let a = "#" + event.target.id;
+            $(a).css("width", "108%");
+
+            if ([...event.target.classList].includes("right_section")) {
+                $(a).css("margin-left", "-8%");
+            }
+        }
 
         if(!$('.middle').hasClass('content_view') || $(this).hasClass('active')){
             changeMode($(this));
         }
         toggleActive($(this));
+    });
+
+    /*Close content view with close btn*/
+    $('.content_view_close').click(function(){
+        changeMode();
     });
 
     /*Links the login button to my home view*/
@@ -149,12 +165,15 @@ $(document).keypress(function(e) {
 function changeMode(obj){
     $('.left, .right, .middle').toggleClass('content_view');
     $('#left, #right, #middle').toggleClass('content_view');
+    $('.content_view_close').toggleClass('show');
     //$('#ch4, #ch5, #ch6').toggleClass('content_view');
 }
 function toggleActive(obj){
+
     let isActive = obj.hasClass('active');
     $('.active').removeClass('active');
     if(!isActive) obj.addClass('active');
+
 }
 function toggleColor(){
 	$('#color').remove();

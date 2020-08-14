@@ -1,6 +1,6 @@
 :root{
     --darkest:   #353531;
-    --dark:		 #40403A;
+    --dark:		 #353531;
     --darkBlue:  #0C2145;
     --midGray:   #353531;
     --midRed:  	 #C0453F;
@@ -18,7 +18,7 @@
     --login-bg: #E5E5E5;
     --login-txt: var(--dark-text);
 
-    --content: var(--brightest);
+    --content: var(--dark);
 
     --tile-bg1: var(--midGray);
     --tile-txt1: var(--bright-text);

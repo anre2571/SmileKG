@@ -60,48 +60,75 @@ myhome{
     justify-content: center;
     align-items: center;
 }
+.content_view_close{
+    background-image: url(../dummyPictures/close.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 30px;
+    padding: 20px;
+    position: absolute;
+    right: 16%;
+    top: 13%;
+    z-index: 999;
+    display: none;
+}
+.show{
+    display: block;
+}
 #left{
-    display: grid;
-    grid-template-areas:
-            'profile'
-            'payments'
-            'feedback';
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: var(--grid-gap);
-    flex: 1;
-    padding: var(--half-gap);
+display: grid;
+grid-template-areas:
+        'profile'
+        'payments'
+        'feedback';
+grid-template-rows: 1fr 1fr 1fr;
+grid-gap: var(--grid-gap);
+flex: 1;
+padding: var(--half-gap);
 }
 
 #middle{
-    flex: 0;
-    display: flex;
-    padding: var(--half-gap) 0 var(--half-gap) 0;
-    overflow:hidden;
+flex: 0;
+display: flex;
+padding: var(--half-gap) 0 var(--half-gap) 0;
+overflow:hidden;
+justify-content: center;
 }
 
 #right{
-    display:grid;
-    grid-template-areas:
-            'cute_baby notifications'
-            'courses notifications'
-            'attendance contact';
-    grid-template-rows: 4.3fr 1fr 1fr;
-    grid-gap: var(--grid-gap);
-    flex: 2;
-    padding: var(--half-gap);
+display:grid;
+grid-template-areas:
+        'cute_baby notifications'
+        'courses notifications'
+        'attendance contact';
+grid-template-rows: 4.3fr 1fr 1fr;
+grid-gap: var(--grid-gap);
+flex: 2;
+padding: var(--half-gap);
 }
 
 #left.content_view{
-    flex: 1;
+flex: 1;
 }
 
 #middle.content_view{
-    padding: var(--half-gap);
-    flex: 5;
+padding: var(--half-gap);
+flex: 5;
 }
 
 #right.content_view {
-    flex: 1;
+flex: 1;
+grid-template-areas:
+        'cute_baby'
+        'courses'
+        'attendance'
+        'notifications'
+        'contact';
+grid-template-rows: 3fr 2fr 2fr 1fr 1fr;
+}
+@media (max-width: 800px){
+#right{
+    flex:1;
     grid-template-areas:
             'cute_baby'
             'courses'
@@ -110,70 +137,61 @@ myhome{
             'contact';
     grid-template-rows: 3fr 2fr 2fr 1fr 1fr;
 }
-@media (max-width: 800px){
-    #right{
-        flex:1;
-        grid-template-areas:
-                'cute_baby'
-                'courses'
-                'attendance'
-                'notifications'
-                'contact';
-        grid-template-rows: 3fr 2fr 2fr 1fr 1fr;
-    }
 }
 #logo{
-    grid-area: logo;
+grid-area: logo;
 }
 #goto_main{
-    grid-area: goto_main;
+grid-area: goto_main;
 }
 #logout{
-    grid-area: logout;
+grid-area: logout;
 }
 #profile{
-    grid-area: profile;
-    background-color: #FFC700;
+grid-area: profile;
+background-color: #FFC700;
 }
 #payments{
-    grid-area: payments;
-    background-color: #222A32;
-    color: white;
+grid-area: payments;
+background-color: #222A32;
+color: white;
 }
 #feedback{
-    grid-area: feedback;
-    background-color: #2F2B2B;
-    color:white;
+grid-area: feedback;
+background-color: #2F2B2B;
+color:white;
 }
 #cute_baby{
-    grid-area: cute_baby;
-    color:white;
-    background-image: url("../dummyPictures/cute baby.png");
-    background-size: cover;
+grid-area: cute_baby;
+color:white;
+background-image: url("../dummyPictures/cute baby.png");
+background-size: cover;
 }
 #courses{
-    grid-area: courses;
-    background-color: #FFC700;
+grid-area: courses;
+background-color: #FFC700;
 }
 #attendance{
-    grid-area: attendance;
-    background-color: #352525;
-    color: white;
+grid-area: attendance;
+background-color: #352525;
+color: white;
 }
 #notifications{
-    grid-area: notifications;
-    background-color: #E5E5E5;
+grid-area: notifications;
+background-color: #E5E5E5;
 }
 #mycontact{
-    grid-area: contact;
-    background-color: #222A32;
-    color: white;
+grid-area: contact;
+background-color: #222A32;
+color: white;
 }
 #content{
-    flex: 1;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #FFFDF4;
+filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.6));
+flex: 0.97;
+margin: 1px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background-color: #353531;
 }
