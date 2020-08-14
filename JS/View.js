@@ -11,27 +11,26 @@ $(document).ready(function(){
     $("myhome").hide();
 
 
+
+
     $('#right,.right>* , #left,.left>*').click(function(event){
         if($(this).hasClass('no_content')) return;
 
        /*choose which section to display*/
-        let choice = '#'+ event.target.id + '_content';
+        let choice = '#'+ event.target.id + '_content'; //construct id of section to be displayed
 
-        $('#content>*').hide();
+        $('#content>*').hide(); //hide all other divs under content
         $('.my_home_section').css({"width":"100%","margin":"0%"});
+        $(choice).show(); //show the currently selected section
 
-        $(choice).show();
-
+        /*expand the selected section to meet the content box*/
         if(!$(this).hasClass('active')) {
-
             let a = "#" + event.target.id;
-            $(a).css("width", "108%");
-
+            $(a).css("width", "108%"); //expland left sections
             if ([...event.target.classList].includes("right_section")) {
-                $(a).css("margin-left", "-8%");
+                $(a).css("margin-left", "-8%"); //expand right sections in the opp direction
             }
         }
-
         if(!$('.middle').hasClass('content_view') || $(this).hasClass('active')){
             changeMode($(this));
         }
@@ -41,6 +40,9 @@ $(document).ready(function(){
     /*Close content view with close btn*/
     $('.content_view_close').click(function(){
         changeMode();
+        /*reset all the css to default on close*/
+        $('.my_home_section').css({"width":"100%","margin":"0%"});
+        $('.active').removeClass('active');
     });
 
     /*Links the login button to my home view*/
@@ -53,6 +55,18 @@ $(document).ready(function(){
             $("myhome").hide();
             $("main").show();
         });
+
+    //*When edit btn is clicked*/
+    $("#edit_profile").click(function(){
+      if($(this).text() === "Save"){
+          $(this).text("Edit");
+          $('.mpd_content').attr('contenteditable','false');
+
+      } else {
+          $(this).text("Save");
+          $('.mpd_content').attr('contenteditable', 'true');
+      }
+    });
 
 
 

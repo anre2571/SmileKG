@@ -1,3 +1,4 @@
+/*Contains css for all the sub sections in my home page*/
 /*css for my profile*/
 .content{
     flex: 1;
@@ -7,6 +8,12 @@
     justify-content: center;
     background-color: #FFFDF4;
 }
+div[contenteditable="true"] {
+    background: grey;
+    border-radius: 5px;
+    height: 85%;
+    padding-top: 3%;
+}
 
 #profile_content{
     background-color: #353531;
@@ -14,6 +21,7 @@
     height:100%;
     display: flex;
     flex-direction: row;
+    padding-left: 8%;
 
 
 }
@@ -23,6 +31,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.column.details{
+    flex:2;
 }
 #my_profile_picture{
     height:100%;
@@ -42,7 +53,7 @@
 }
 #my_profile_name{
     height:10%;
-    width:48%;
+    width:250px;
     margin-top:5px;
     background-color: #FFC805;
     display: flex;
@@ -59,9 +70,10 @@
     background-size: contain;
 }
 #my_profile_details{
-    color:white;
-    height:60%;
-    width:80%;
+    color: white;
+    height: 70%;
+    padding-top: 3%;
+    width: 80%;
     background-color: #5F5F59;
     display: flex;
     flex-direction: column;
@@ -84,11 +96,15 @@
 }
 .mpd_content_title{
     font-weight: bold;
-    flex:1
+    flex:1;
+   display: flex;
+    justify-content: start;
+    margin-left:10%;
 }
 .mpd_content{
-    flex:2;
+    flex:3;
     font-weight: normal;
+    margin-right: 5%;
 }
 #edit_profile{
     float:right;
