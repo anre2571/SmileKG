@@ -10,6 +10,7 @@ $(document).ready(function(){
     $("main").show();
     $("myhome").hide();
     $("#general_homepage_section").hide();
+    $("#goto_myhome_section").hide();
 
 
 
@@ -50,22 +51,25 @@ $(document).ready(function(){
 
     /*Links the login button to my home view*/
         $('#login').click(function() {
-            if($(this).text() === "LOGIN"){
-                $(this).text("LOGOUT");
+            if($("#login").text() === "LOGIN"){
+                $("#login").text("LOGOUT");
             } else{
-                $(this).text("LOGIN");
+                $("#login").text("LOGIN");
                 $( "#logo" ).trigger( "click" );
+                $("#goto_myhome_section").hide();
                 return;
             }
             $("main").hide();
             $("#switch_campus_options").hide();
             $("#general_homepage_section").show();
+            $("#goto_myhome_section").hide();
             $("myhome").show();
         });
     /*Links the logo main homepage*/
         $('#logo, #general_homepage, #go_to_home_title').click(function() {
-            if($("login").text() === "LOGOUT"){
+            if($("#login").text() === "LOGOUT"){
                 //add my home button
+                $("#goto_myhome_section").show();
             }
             $("myhome").hide();
             $("main").show();
@@ -83,6 +87,16 @@ $(document).ready(function(){
           $(this).text("Save");
           $('.mpd_content').attr('contenteditable', 'true');
       }
+    });
+
+    //on clicking my page
+    $('#goto_myhome_section').click(function() {
+
+        $("main").hide();
+        $("#switch_campus_options").hide();
+        $("#general_homepage_section").show();
+        $("#goto_myhome_section").hide();
+        $("myhome").show();
     });
 
 

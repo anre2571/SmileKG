@@ -44,7 +44,7 @@ main{
    /* font-weight: 550;*/
 }
 #switch_campus_title{
-    margin-right:5%;
+    margin-left:5%;
 }
 #switch_campus_options {
 
@@ -52,6 +52,7 @@ main{
     width: 90%;
     height: 100%;
     flex-direction: row;
+    align-items: center;
 }
 #general_homepage{
     background-image: url(../dummyPictures/home.png);
@@ -64,6 +65,7 @@ main{
 }
 #go_to_home_title{
     cursor: pointer;
+
 }
 #general_homepage_section{
     width: 100%;
@@ -78,17 +80,36 @@ main{
     background-size: contain;
     background-repeat: no-repeat;
     width: 100%;
-    height: 50%;
+    height: 70%;
+    flex:0.5;
+    min-height: 80px;
+    min-width:80px;
+}
+#goto_myhome_title{
+    display: flex;
+    justify-content: start;
+    flex:1;
 }
 #goto_myhome_section{
-    width:20%;
-    height:100%;
-    margin-right: 15%;
+    width: 22%;
+    height: 100%;
+    margin-right: 5%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
 }
 .campuses{
     flex:1;
-    margin-left: 5%;
+    font-weight: normal;
+}
+hr.vertical{
+
+    border:         none;
+    border-left:    1px solid hsla(200, 10%, 50%,100);
+    height:         80%;
+    width:          1px;
 }
 
 .left{
