@@ -211,8 +211,16 @@ css for feedback*/
 
 /*css for payments*/
 #payments_content{
-
+    width:95%;
+    height:95%;
+    overflow: scroll;
+    overflow-x: hidden;
 }
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
 h2 {
     color: #ffffff;
 }
@@ -300,6 +308,17 @@ button:hover {
 }
 
 /*css for cute baby*/
+#cute_baby_content{
+    width:95%;
+    height:95%;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
 .navbtnDaily, .navbtnAbility, .navbtnPhsysical, .navback, .navforward, .abilitynav {
     background-color: #ffc700;
     border: none;
