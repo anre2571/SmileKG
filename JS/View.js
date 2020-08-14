@@ -27,9 +27,11 @@ $(document).ready(function(){
         /*expand the selected section to meet the content box*/
         if(!$(this).hasClass('active')) {
             let a = "#" + event.target.id;
-            $(a).css("width", "108%"); //expland left sections
-            if ([...event.target.classList].includes("right_section")) {
-                $(a).css("margin-left", "-8%"); //expand right sections in the opp direction
+            if(a !== "#") {
+                $(a).css("width", "108%"); //expland left sections
+                if ([...event.target.classList].includes("right_section")) {
+                    $(a).css("margin-left", "-8%"); //expand right sections in the opp direction
+                }
             }
         }
         if(!$('.middle').hasClass('content_view') || $(this).hasClass('active')){
