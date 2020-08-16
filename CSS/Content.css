@@ -73,7 +73,7 @@ div[contenteditable="true"] {
     color: white;
     height: 70%;
     padding-top: 3%;
-    width: 80%;
+    width: 70%;
     background-color: #5F5F59;
     display: flex;
     flex-direction: column;
@@ -567,4 +567,75 @@ textarea {
 }
 #notifications_content .notification_title{
     text-transform: uppercase;
+}
+
+/*css for my contact section*/
+#mycontact_content{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 50%;
+    color: white;
+    background-color: #222A32;
+    border-radius: 10px;
+
+}
+.mycontact_labels{
+    flex:1;
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+}
+.mycontact_info{
+    flex: 3;
+    margin-left: 3%;
+    max-width: 50%;
+
+}
+.mycontact_column{
+    display: flex;
+    flex-direction: column;
+}
+.contact_icon{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+
+}
+.mycontact_title{
+    margin-left:20px;
+
+
+}
+.info_divs{
+    display: flex;
+    justify-content: start;
+    line-height: 40px;
+}
+
+
+#contact_phone{
+    background-image: url("../dummyPictures/phone.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height:40px;
+    width:40px;
+    display: inline-block;
+}
+#contact_email{
+    background-image: url("../dummyPictures/email.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height:40px;
+    width:40px;
+}
+#contact_location{
+    background-image: url("../dummyPictures/location.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height:40px;
+    width:40px;
+
 }

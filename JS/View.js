@@ -55,8 +55,11 @@ $(document).ready(function(){
 
     /*Links the login button to my home view*/
         $('#login').click(function() {
+            resetCSS();
+
             if($("#login").text() === "LOGIN"){
                 $("#login").text("LOGOUT");
+
             } else{
                 $("#login").text("LOGIN");
                 $( "#logo" ).trigger( "click" );
@@ -71,6 +74,8 @@ $(document).ready(function(){
         });
     /*Links the logo main homepage*/
         $('#logo, #general_homepage, #go_to_home_title').click(function() {
+
+            resetCSS();
             if($("#login").text() === "LOGOUT"){
                 //add my home button
                 $("#goto_myhome_section").show();
@@ -96,12 +101,22 @@ $(document).ready(function(){
     //on clicking my page
     $('#goto_myhome_section').click(function() {
 
+        resetCSS();
         $("main").hide();
         $("#switch_campus_options").hide();
         $("#general_homepage_section").show();
         $("#goto_myhome_section").hide();
         $("myhome").show();
     });
+
+
+    function resetCSS(){
+        if($('.middle').hasClass('content_view')){
+            changeMode($(this));
+        }
+        $('.active').removeClass('active');
+        $('.my_home_section').css({"width":"100%","margin":"0%"});
+    }
 
     // When an emoji clicked, it is colored.
     function faceSwitch(){
