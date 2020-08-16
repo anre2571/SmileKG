@@ -488,3 +488,83 @@ textarea {
     font-size: 16px;
     resize: none;
 }
+
+/*css for notifications section*/
+#not_display_title{
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    margin-bottom:5%;
+    padding: 2%;
+
+}
+#notif_homepage_display{
+    display: flex;
+    flex-direction: column;
+    text-transform: none;
+    width:100%;
+    font-size: medium;
+
+}
+.notification_row{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    margin-top:1%;
+}
+.notification_type{
+    flex:3;
+    color:white;
+    background-color: #353131;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:2%;
+    padding:1%;
+
+}
+.notification_title{
+    flex:5;
+    display: flex;
+    justify-content: start;
+    margin-left: 3%;
+    padding:1%;
+}
+.notification_date{
+    flex:2;
+    padding:1%;
+}
+
+#notifications_content{
+    background-color: #353531;
+    width:100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    color:white;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-top:3%;
+}
+
+#notifications_content > .notification_row{
+    flex:0.2;
+    margin-top:1%;
+}
+.notification_decsription{
+    flex: 0.8;
+    font-size: medium;
+    padding: 5%;
+    padding-top:2%;
+    text-align: justify;
+
+}
+
+#notifications_content .notification_type{
+    background-color: #E5E5E5;
+    color:black;
+    margin-left: 5%;
+}
+#notifications_content .notification_title{
+    text-transform: uppercase;
+}

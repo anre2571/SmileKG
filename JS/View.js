@@ -28,6 +28,9 @@ $(document).ready(function(){
         /*expand the selected section to meet the content box*/
         if(!$(this).hasClass('active')) {
             let a = "#" + event.target.id;
+
+
+
             if(a !== "#") {
                 $(a).css("width", "108%"); //expland left sections
                 if ([...event.target.classList].includes("right_section")) {
@@ -211,13 +214,21 @@ function changeMode(obj){
     $('.left, .right, .middle').toggleClass('content_view');
     $('#left, #right, #middle').toggleClass('content_view');
     $('.content_view_close').toggleClass('show');
+    /*Contents on the notification section hidden when collapsed*/
+    if ($("#notif_homepage_display").is(":hidden")){
+        $("#notif_homepage_display").show();
+    } else{
+        $("#notif_homepage_display").hide();
+    }
     //$('#ch4, #ch5, #ch6').toggleClass('content_view');
 }
 function toggleActive(obj){
 
     let isActive = obj.hasClass('active');
     $('.active').removeClass('active');
-    if(!isActive) obj.addClass('active');
+    if(!isActive) {
+        obj.addClass('active');
+    }
 
 }
 function toggleColor(){

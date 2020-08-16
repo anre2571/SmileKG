@@ -177,8 +177,10 @@ background-color: #352525;
 color: white;
 }
 #notifications{
-grid-area: notifications;
-background-color: #E5E5E5;
+    grid-area: notifications;
+    background-color: #E5E5E5;
+    display: block;
+
 }
 #mycontact{
 grid-area: contact;
