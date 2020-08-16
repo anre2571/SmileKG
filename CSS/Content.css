@@ -490,7 +490,7 @@ textarea {
 }
 
 /*css for notifications section*/
-#not_display_title{
+#notification_display_title{
     text-transform: uppercase;
     display: flex;
     justify-content: center;
@@ -498,7 +498,7 @@ textarea {
     padding: 2%;
 
 }
-#notif_homepage_display{
+#notification_homepage_display{
     display: flex;
     flex-direction: column;
     text-transform: none;

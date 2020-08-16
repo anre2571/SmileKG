@@ -15,9 +15,13 @@ $(document).ready(function(){
 
 
 
-    $('#right,.right>* , #left,.left>*').click(function(event){
+    $('#right>,.right>* , #left,.left>*').click(function(event){
         if($(this).hasClass('no_content')) return;
 
+        //special check for click on notifications section/sub divs
+        if(!event.target.id || event.target.id.search("notification") > -1){
+            event.target = $("#notifications")[0];
+        }
        /*choose which section to display*/
         let choice = '#'+ event.target.id + '_content'; //construct id of section to be displayed
 
@@ -28,9 +32,6 @@ $(document).ready(function(){
         /*expand the selected section to meet the content box*/
         if(!$(this).hasClass('active')) {
             let a = "#" + event.target.id;
-
-
-
             if(a !== "#") {
                 $(a).css("width", "108%"); //expland left sections
                 if ([...event.target.classList].includes("right_section")) {
@@ -101,8 +102,6 @@ $(document).ready(function(){
         $("#goto_myhome_section").hide();
         $("myhome").show();
     });
-
-
 
     // When an emoji clicked, it is colored.
     function faceSwitch(){
@@ -199,7 +198,7 @@ $(document).ready(function(){
     })
 
     // surveyResponse();
-    console.log('j is ' + j);
+
     /*
     });*/
 
@@ -215,12 +214,11 @@ function changeMode(obj){
     $('#left, #right, #middle').toggleClass('content_view');
     $('.content_view_close').toggleClass('show');
     /*Contents on the notification section hidden when collapsed*/
-    if ($("#notif_homepage_display").is(":hidden")){
-        $("#notif_homepage_display").show();
+    if ($("#notification_homepage_display").is(":hidden")){
+        $("#notification_homepage_display").show();
     } else{
-        $("#notif_homepage_display").hide();
+        $("#notification_homepage_display").hide();
     }
-    //$('#ch4, #ch5, #ch6').toggleClass('content_view');
 }
 function toggleActive(obj){
 
