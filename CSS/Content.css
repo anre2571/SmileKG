@@ -122,13 +122,13 @@ hr{
 
 /*
 css for feedback*/
-
+#feedback-wrap{
+  text-align: center;
+}
 #progress{
-    width: 350px;
-    height: 32px;
-    /* background: lightblue; */
-    margin-bottom: 35px;
-    /* border: purple 1px solid; */
+  width: 350px;
+  height: 32px;
+  margin:0 auto;
 }
 .progress-bar{
     -webkit-border-radius: 5px;
@@ -157,57 +157,54 @@ css for feedback*/
     width: 100%;
 }
 .inquiry{
-    width: 70%;
-    height: 60px;
-    border: grey solid 1px;
+  width: 70%;
+  height: 60px;
+  margin: 0 auto;
+  padding: 35px;
 }
 .ask{
     font-size: 20px;
 }
 .response{
-    width: 500px;
-    height: 200px;
-    border: red 1px solid;
+  width: 500px;
+  height: 200px;
+  margin: 0 auto;
 }
 .face-wrap{
     margin-top: 50px;
     width: 500px;
     height:70px;
-    border: 1px solid lightgreen;
 }
 .face{
-    width: 55px;
-    height: auto;
-    margin: 8px;
+  width: 55px;
+  height: auto;
+  margin: 8px;
+  cursor:pointer;
 }
 .arrow{
-
+  cursor: pointer;
 }
 #arrow-left{
-    /* margin: 100px; */
-    display: inline-block;
-    width:0px;
-    height:0px;
-    border-top: 18px solid transparent;
-    border-right: 15px solid black;
-    border-bottom: 18px solid transparent;
-    margin-bottom: 12px;
-    margin-right:8px;
-    /* border-left: 40px solid black; */
-
-
+  display: inline-block;
+  width:0px;
+  height:0px;
+  border-top: 18px solid transparent;
+  border-right: 15px solid black;
+  border-bottom: 18px solid transparent;
+  margin-bottom: 12px;
+  margin-right:8px;
 }
 #arrow-right{
-    /* margin: 100px; */
-    display: inline-block;
-    width:0px;
-    height:0px;
-    border-top: 18px solid transparent;
-    border-bottom: 18px solid transparent;
-    border-left: 15px solid black;
-    margin-left: 8px;
-    margin-bottom: 12px;
+  display: inline-block;
+  width:0px;
+  height:0px;
+  border-top: 18px solid transparent;
+  border-bottom: 18px solid transparent;
+  border-left: 15px solid black;
+  margin-left: 8px;
+  margin-bottom: 12px;
 }
+
 
 /*css for payments*/
 #payments_content{
@@ -638,4 +635,209 @@ textarea {
     height:40px;
     width:40px;
 
+}
+
+/*css for attendance*/
+ul{
+  list-style-type:none;
+}
+#calendar-wrap{
+ text-align: center;
+ height: 80%;
+ width: inherit;
+ margin-bottom: 10%;
+ overflow: scroll;
+}
+/* Month */
+.month{
+  padding: 10px 25px;
+  text-align: center;
+  width: 80%;
+  background: #87BAD4;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Month list */
+.month ul li{
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.month .prev{
+  float:left;
+  padding-top:10px;
+}
+.month .next{
+  float: right;
+  padding-top: 10px;
+}
+.weekdays{
+  width: 80%;
+  margin:0 auto;
+  background-color: #ddd;
+  padding: 16px 0;
+  text-align: center;
+
+}
+.weekdays li{
+  color:#666;
+  display: inline-block;
+  width: 17%;
+/* calc( /7) */
+}
+.days{
+  width: 80%;
+  padding:10px 0;
+  /* background: #eee; */
+  margin:0 auto;
+  overflow: scroll;
+  background-color: #eee;
+}
+.days li{
+  list-style-type:none;
+  display:inline-block;
+  width: 17%;
+  text-align:center;
+  margin-bottom: 20px;
+  padding:15px;
+  font-size:16px;
+  color:#777;
+  transition: background-color 0.2s;
+}
+.today{
+  padding:5px;
+  background: #87BAD4;
+  color: white !important;
+}
+.next-date, .prev-date{
+  opacity:0.5;
+}
+
+.days li:hover:not(.next-date):not(.prev-date):not(.today):not(.attend){
+  background-color: #262626;
+  cursor:pointer;
+
+}
+
+.attend-img, .absent-img{
+  width:20px;
+  height:auto;
+}
+
+.form-show{
+  /* overlay container */
+  position:relative;
+  text-align:center;
+  max-height:100%;
+}
+.form-show span{
+  /* image-non */
+  max-width:100%;
+  height:auto;
+}
+
+.form-overlay{
+  /* pj-overlay */
+  position: absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+
+  width: 100%;
+  opacity:0;
+  background-color: #FA4163;
+  transition: .2s ease;
+}
+.form-img{
+  /* img goto */
+  max-width: 100%;
+  height:100%;
+
+}
+.form-show:hover .form-overlay{
+  opacity:1;
+}
+
+/* Pop-up leave form*/
+.modal-wrap{
+  display:none;
+  top:0;
+  left:0;
+  position:fixed;
+  z-index:1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(35,35,35,0.9);
+}
+.confirm-wrap{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(35,35,35,0.9);
+}
+.modal-form{
+  width:420px;
+  height:230px;
+  background-color: #DEDEDE;
+  margin: 15% auto auto auto;
+  opacity:1;
+}
+.confirm-form{
+  width:420px;
+  height:230px;
+  padding: 10%;
+  background-color: #DEDEDE;
+  margin: 15% auto auto auto;
+  opacity:1;
+}
+.leave-form{
+  display: inline-block;
+  margin-top: 20px;
+  text-align: left;
+}
+.leave-reason{
+  margin:10px;
+}
+.modal-box{
+  /* display:inline-block; */
+  text-align: right;
+  margin-top:10px;
+}
+#leave-reason{
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+#submit{
+  text-align: right;
+
+}
+.close{
+  position:absolute;
+  right:10px;
+  color:#f1f1f1;
+  font-size:28px;
+  font-weight:bold;
+  transition:0.3s;
+}
+.close:hover, .close:focus{
+  color:#bbb;
+  text-decoration: none;
+  cursor:pointer;
+}
+.ab-date{
+  margin-left: 10px;
+}
+.from{
+  margin-top: 10px;
+}
+.to{
+  margin-top: 5px;
 }

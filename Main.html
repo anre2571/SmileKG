@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" type="text/css" href="CSS/MainLayout.css">
     <link id = "color" rel="stylesheet" type="text/css" href="CSS/Color1.css">
-    <link  rel="stylesheet" type="text/css" href="CSS/Content.css">
+    <link rel="stylesheet" type="text/css" href="CSS/Content.css">
     <link rel="stylesheet" type="text/css" href="CSS/Interaction.css">
     <link rel="stylesheet" type="text/css" href="CSS/MyLayout.css">
 
@@ -185,7 +185,7 @@
                 </div>
                 <div class="mpd_contents">
                   <div class="mpd_content_title">Address</div>
-                  <div class="mpd_content">Kantorsgatan 21 , Lgh 1013,  75421 Uppsala</div>
+                  <div class="mpd_content">Kantorsgatan 21 , Lgh 1013, 75421 Uppsala</div>
                 </div>
                 <hr>
                 <div class="mpd_contents">
@@ -211,17 +211,15 @@
 
 
           </div>
-          <!--Content for Satisfaction-->
+          <!--Content for Feedback-->
           <div id="feedback_content">
-
+            <div id=feedback-wrap>
             <div id = progress>
               <div id = bar-container class = progress-bar>
                 <div id = percentage class = progress-bar><span class = percentage>10%</span></div>
               </div>
             </div>
-            <!-- <div class="w3-light-grey w3-round-large">
-              <div class="w3-container w3-blue w3-round" style="width:44%">25%</div>
-            </div> -->
+
             <div class = inquiry>
               <div class = ask>1.Overall, my child enjoyed his/her experiences at Smile Kindergarten.</div>
             </div>
@@ -237,6 +235,112 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Content for Attendance -->
+  <div id="attendance_content">
+    <div id = calendar-wrap>
+    <div class = "month">
+      <ul>
+        <li class="prev">&#10094;</li>
+        <li class="next">&#10095;</li>
+        <div id=month-title>August</div><span>2020</span>
+      </ul>
+    </div>
+
+
+    <ul class="weekdays">
+      <li>Mo</li>
+      <li>Tu</li>
+      <li>We</li>
+      <li>Th</li>
+      <li>Fr</li>
+    </ul>
+
+    <ul class="days">
+      <!-- <li class="prev-date">27</li>
+      <li class="prev-date">28</li>
+      <li class="prev-date">29</li>
+      <li class="prev-date">30</li>
+      <li class="prev-date">31</li> -->
+      <li><span>3</span></li>
+      <li><span>4</span></li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+
+      <li>10</li>
+      <li>11</li>
+      <li class= today><span>12</span></li>
+      <li><span>13</span></li>
+      <li><span>14</span></li>
+
+      <li><span>17</span></li>
+      <li><span>18</span></li>
+      <li>19</li>
+      <li><span>20</span></li>
+      <li><span>21</span></li>
+
+      <li><span>24</span></li>
+      <li><span>25</span></li>
+      <li><span>26</span></li>
+      <li><span>27</span></li>
+      <li><span>28</span></li>
+
+      <li><span>31</span></li>
+      <li class="next-date">1</li>
+      <li class="next-date">2</li>
+      <li class="next-date">3</li>
+      <li class="next-date">4</li>
+    </ul>
+  </div>
+
+  <div class=modal-wrap>
+    <span class= close>&times;</span>
+    <div class= modal-form>
+      <div class=leave-form>
+        <!-- <div class=leave-form> -->
+          <label for=leave-date><span><b>Leave date</b></span></label>
+          <div class=modal-box class=from><span>&nbsp;&nbsp;&nbsp;From</span>
+            <input type=date id=from-date  />
+            <input type=time id=from-time  />
+          </div>
+
+          <div class=modal-box class=to><span>&nbsp;&nbsp;&nbsp;To</span>
+            <input type=date id=to-date  />
+            <input type=time id=to-time  />
+          </div>
+
+          <div class=leave-reason>
+            <label for=leave-reason><b>Reason</b></label>
+            <input type=text id=leave-reason style="width:235px"/>
+            <div id=submit><button >submit</button></div>
+          </div>
+      </div>
+      </div>
+    </div>
+    <div class=confirm-wrap>
+        <span class= close>&times;</span>
+        <div class=leave-form>
+          <div class= confirm-form>
+              <label for=leave-date><span><b>Leave date</b></span></label>
+              <div class=confirm-box class=from><span>&nbsp;&nbsp;&nbsp;From</span>
+                <div class=confirm-from-date></div>
+                <div class=confirm-from-time></div>
+              </div>
+
+              <div class=confirm-box class=to><span>&nbsp;&nbsp;&nbsp;To</span>
+                <div class=confirm-to-date></div>
+                <div class=confirm-to-time></div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+        </div>
           <!--Content for Payments-->
           <div id="payments_content">
 

@@ -4,7 +4,13 @@ let initsize={
     width:0,
     height:0
 }
+let j=1;
 let collector = [];
+let response = [];
+
+let out;
+let thedate;
+
 $(document).ready(function(){
     /*Show only main home on launch*/
     $("main").show();
@@ -118,41 +124,42 @@ $(document).ready(function(){
         $('.my_home_section').css({"width":"100%","margin":"0%"});
     }
 
-    // When an emoji clicked, it is colored.
+// [Feedback] When an emoji clicked, it is colored.
     function faceSwitch(){
-        $('.face').click(function(){
-            if($('.clicked').length>0){
-                let clickedId = $('.clicked').attr('id');
-                console.log(clickedId);
-                $('.clicked').attr('src','dummyPictures/face/'+clickedId+'.png');
-                $('.clicked').removeClass('clicked');
-            }
+      $('.face').click(function(){
+        if($('.clicked').length>0){
+            let clickedId = $('.clicked').attr('id');
+            console.log(clickedId);
+            $('.clicked').attr('src','dummyPictures/face/'+clickedId+'.png');
+            $('.clicked').removeClass('clicked');
+        }
 
-            let id = this.id;
-           let d = $(this).attr('src','dummyPictures/face/'+id+'-click.png');
-           console.log(d);
-            $(this).addClass('clicked');
-        });
+        let id = this.id;
+        $(this).attr('src','dummyPictures/face/'+id+'-click.png');
+        $(this).addClass('clicked');
+      });
     };
-// Show/update questions
+// Show/update questions. Put the data(questions) to an array.
     function showQuestions(){
         for (let i=0; i<QDB.questions.length;i++){
-            collector.push(QDB.questions[i]);
-        };
-        return collector;
-    }
+          collector.push(QDB.questions[i]);};
+              return collector;}
 
-    let j=1;
 
+    //Put the questions from data into the DOM.
     function questionUpdate(){
-        let item = '<div class = ask>' + collector[j-1]['question'+j] + '</div>'; //question1
-        console.log(item);
-        let percentage = '<span class = percentage>'+j+'0%'+'</span>'; //10%
-        console.log(percentage);
-        console.log(collector[j-1]['question'+j]);
-        $(".inquiry").append(item);
-        $("#percentage").append(percentage);
-        // 왤케 배열 겹겹으로 하는지?
+      let item = '<div class = ask>' + collector[j-1]['question'+j] + '</div>'; //question1
+      let percentage = '<span class = percentage>'+j+'0%'+'</span>'; //10%
+      $(".inquiry").append(item);
+      $("#percentage").append(percentage);
+    }
+    // Store responses in an array.
+    function storeResponse(){
+      $('.face').click(function(){
+          let item = $(this).attr('id');
+          response.push(item);
+      })
+      return response;
     }
 
     let QDB = {
@@ -185,39 +192,213 @@ $(document).ready(function(){
 
     faceSwitch();
     showQuestions();
+    storeResponse();
 // When the right arrow clicked
     $('#arrow-right').click(function(){
-        // 1. Smiley emoji reset
-        if($('.clicked').length>0){
-            let clickedId = $('.clicked').attr('id');
-            $('.clicked').attr('src','dummyPictures/face/'+clickedId+'.png');
-            $('.clicked').removeClass('clicked');
-        }
-        if(j<10){j++;}
-        // 2. Next Question -> progress bar changes
-        if($('.ask').length>0){
-            $('.ask').remove();
-            $('.percentage').remove();
-            $('#percentage').css('width',j*10+'%');
-        }
-
-        questionUpdate();
-        return j;
-
-        // 4. What about the data?
+      // 1. Emoji reset
+      if($('.clicked').length>0){
+          let clickedId = $('.clicked').attr('id');
+          $('.clicked').attr('src','dummyPictures/face/'+clickedId+'.png');
+          $('.clicked').removeClass('clicked');
+      }
+      if(j<10){j++;}
+      // 2. Move onto the next Question, Progress bar changes
+      if($('.ask').length>0){
+        $('.ask').remove();
+        $('.percentage').remove();
+        $('#percentage').css('width',j*10+'%');
+      }
+      questionUpdate();
+      return j;
 
     })
     $('#arrow-left').click(function(){
-        // 1.previous emoji data
-        // 2.Progress bar backwards
+          if(j>1){
+          // 1.emoji reset
+          console.log('current j is '+j);
+          if($('.clicked').length>0){
+              let clickedId = $('.clicked').attr('id');
+              $('.clicked').attr('src','dummyPictures/face/'+clickedId+'.png');
+              $('.clicked').removeClass('clicked');
+            }
+          // 2. Shows the previous response(emoji)
+          let prevFace = response[response.length-1];
+          $('#'+prevFace).attr('src','dummyPictures/face/'+prevFace+'-click.png');
+          $('#'+prevFace).addClass('clicked');
+          console.log(response);
+          response.pop();
+
+          //3.Progress bar and the question go backwards
+          if($('.ask').length>0 || $('.percentage').length>0){
+          $('.ask').remove();
+          $('.percentage').remove();
+          $('#percentage').css('width',(j-1)*10+'%');
+          }
+
+          let item = '<div class = ask>' + collector[j-2]['question'+(j-1)] + '</div>'; //question1
+          let percentage = '<span class = percentage>'+(j-1)+'0%'+'</span>';
+          $(".inquiry").append(item);
+          $("#percentage").append(percentage);
+          if(j>1){j--;}
+          }
+    });
+
+// Attendance
+const date = new Date();
+let check = [];
+let absentDates = new Object();
+
+// DB for attendance
+let ADB = {
+  "July" : ["attend", "attend","attend","absent","attend",
+            "attend", "attend","attend","attend","attend",
+            "attend", "absent","attend","attend","attend",
+            "attend", "attend","attend","attend","attend",
+            "attend", "attend","absent","attend","attend",
+          ],
+  "August": ["attend","attend","absent","absent","attend",
+             "attend","attend","attend"]
+}
+
+// Created a array of attendance
+function getAttendance(){
+  for(let i=0;i<ADB.August.length;i++){
+    check.push(ADB.August[i]);
+  }
+  return check;
+}
+// Shows the image of attendance on the calender based on DB.
+function showAttendance(){
+  let datelist = $("ul.days>li").get();
+  for(let x=0;x<datelist.length;x++){
+    if(check[x]=="attend"){
+    $("ul.days>li").eq(x).append('<img class=attend-img src="dummyPictures/attendance/attendance.svg"/>');
+    $("ul.days>li").eq(x).addClass('attend');
+  } else if(check[x]=="absent"){
+    $("ul.days>li").eq(x).append('<img class=absent-img src="dummyPictures/attendance/absent.png"/>');
+  } else{
+  };
+// Highlight 'today' on the calendar.
+    if(datelist[x].innerText==date.getDate().toString()){
+      $("ul.days>li").eq(x).addClass('today');
+    } else if ((datelist[x].innerText!=date.getDate()) && ($("ul.days>li").eq(x).hasClass("today"))) {
+      $("ul.days>li").eq(x).removeClass('today');
+    }
+
+    }
+  }
+  // Leave form is shown for days after today.
+  function showForm(){
+    let day = date.getDate();
+    $("ul.days>li").each(function(index){
+      if($(this).text()>day){
+        $(this).addClass('form-show');
+        $(this).append('<div class=form-overlay><img class=form-img src="dummyPictures/attendance/form.png"></div>');
+      }else{
+        return;
+      }
+    })
+  }
+  // Size of the leave form background follows that of parents.
+  function modalWidth(){
+    let parentwidth = $('#attendance_content').width();
+    let parentheight = $('#attendance_content').height();
+    $('.modal-wrap').width(parentwidth);
+    $('.modal-wrap').height(parentheight);
+    $('.confirm-wrap').width(parentwidth);
+    $('.confirm-wrap').height(parentheight);
+  }
+  // Get the input data(date) from leave form.
+  function getAbsentDate(){
+    let leaveFromDate = document.getElementById('from-date').value;
+    let leaveFromTime = document.getElementById('from-time').value;
+    let leaveToDate = document.getElementById('to-date').value;
+    let leaveToTime = document.getElementById('to-time').value;
+  }
+
+  // When the 'form' image clicked, pop-up window of leave form is shown
+function writeForm(){
+$('.form-img').click(function(){
+    $('.modal-wrap').css('display','inline-block');
+    modalWidth();
+    let elofForm = $(this).parent(); //form-overlay
+    out = $(this);
+    // console.log(out);
+    // console.log(out.parent());
+    // console.log(out.parent().parent().text());
+    // console.log(elofForm);
+    let elofLi= elofForm.parent();   //form-show
+    thedate=out.parent().parent().text();
+    elofLi.addClass("data-"+thedate);  //li(form-show)에 숫자넣음.
+
+})
+
+  $('body').on('click', '#submit',function() {
+  $('.modal-wrap').css('display','none');
+  out.parent().parent().removeClass('form-show');
+  out.parent().parent().addClass('absent');
+  out.parent().parent().append('<img class=absent-img src="dummyPictures/attendance/absent.png">');
+  out.parent().remove(); //form-overlay지움....
+
+
+  // getAbsentDate();
+  let leaveFromDate = document.getElementById('from-date').value;
+  let leaveFromTime = document.getElementById('from-time').value;
+  let leaveToDate = document.getElementById('to-date').value;
+  let leaveToTime = document.getElementById('to-time').value;
+
+  //Input data(date) from the leave-form is stored in the object.
+  absentDates[thedate] =  { 'leaveFromDate': leaveFromDate,
+                                'leaveFromTime': leaveFromTime,
+                                'leaveToDate' : leaveToDate,
+                                'leaveToTime' : leaveToTime};
+  elofForm = undefined;
+  elofLi = undefined;
+});
+$('body').on('click', '.absent-img',function() {
+  out=$(this);
+  thedate=out.parent().text();
+    $('.confirm-wrap').css('display','inline-block');
+    modalWidth();
+    $('.close').click(function(){
+       $('.confirm-wrap').css('display','none');
+    })
+    $("ul.days>li").each(function(index, element){
+    //  if("data-" + thedate == element.classList[0]){
+        $('.confirm-from-date').empty();
+        $('.confirm-from-time').empty();
+        $('.confirm-to-date').empty();
+        $('.confirm-to-time').empty();
+
+        $('.confirm-from-date').append('<span class=ab-date>'+absentDates[thedate]['leaveFromDate']+'</span>');
+        $('.confirm-from-time').append('<span class=ab-date>'+absentDates[thedate]['leaveFromTime']+'</span>');
+        $('.confirm-to-date').append('<span class=ab-date>'+absentDates[thedate]['leaveToDate']+'</span>');
+        $('.confirm-to-time').append('<span class=ab-date>'+absentDates[thedate]['leaveToTime']+'</span>');
     })
 
-    // surveyResponse();
-
-    /*
-    });*/
-
 });
+};
+
+getAttendance();
+showAttendance();
+showForm();
+writeForm();
+//pop-up modal closed when 'close' clicked
+$('.close').click(function(){
+   $('.modal-wrap').css('display','none');
+})
+
+// $(window).resize(
+//   function(){
+//     modalWidth();
+//   }
+// )
+$(window).resize(function(){
+    modalWidth();
+  }
+)
+})
+
 $(document).keypress(function(e) {
   if(e.key == 'c') {
     toggleColor();
