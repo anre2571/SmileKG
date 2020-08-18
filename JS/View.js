@@ -493,4 +493,5 @@ function switchAbility() {
             $(".abilitynav").text("Physical Milestones");
             break;
     }
+
 }
