@@ -62,8 +62,8 @@ div[contenteditable="true"] {
     border-radius: 5px;
 }
 #my_profile_share{
-    height:200px;
-    width:200px;
+    height:250px;
+    width:250px;
     margin-top:10px;
     background-image: url("../dummyPictures/qr.png");
     background-repeat: no-repeat;
@@ -102,9 +102,11 @@ div[contenteditable="true"] {
     margin-left:10%;
 }
 .mpd_content{
-    flex:3;
+    flex: 3;
     font-weight: normal;
     margin-right: 5%;
+    max-width: 60%;
+    text-align: left;
 }
 #edit_profile{
     float:right;

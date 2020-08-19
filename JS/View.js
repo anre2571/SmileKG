@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 
 
-    $('#right>,.right>* , #left,.left>*').click(function(event){
+    $('#right>*,.right>* , #left>*,.left>*').click(function(event){
         if($(this).hasClass('no_content')) return;
 
         //special check for click on notifications section/sub divs
