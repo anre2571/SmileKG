@@ -1,3 +1,7 @@
+h2{
+    margin-bottom: 10px;
+}
+
 /*Contains css for all the sub sections in my home page*/
 /*css for my profile*/
 .content{
@@ -208,6 +212,97 @@ css for feedback*/
   margin-bottom: 12px;
 }
 
+/*css for courses*/
+#course_image{
+    width: 30%;
+}
+#courses_wrapper{
+    display: flex;
+    width: 800px;
+    margin-bottom: 20px;
+}
+#courses_container{
+    width: 80%;
+}
+.course{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background: #5F5F59;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    margin-bottom: 15px;
+    transition: background .4s, color .4s, width .4s, margin .4s;
+}
+.course:last-child{
+    margin-bottom: 0;
+}
+.course:not(.active):hover{
+    background: #FFC805;
+}
+.course.active{
+    width: calc(100% + 15px);
+    margin-right: -15px;
+    color: var(--bright-text);
+}
+.course.active .course_icon{
+    background: #FFC805;
+}
+.course .course_name {
+    width: 120px;
+    text-align: left;
+}
+.course_icon{
+    width: 65px;
+    height: 65px;
+    margin-left: 3px;
+    margin-right: 20px;
+    border-radius: 50%;
+    background: #cccccc;
+    transition: background .4s;
+
+}
+.course_progress{
+    width: 280px;
+    height: 32px;
+    border: #cccccc 2px solid;
+}
+.course_progress_bar{
+    float: left;
+    background: #cccccc;
+    height: 30px;
+}
+.course_h_remaining{
+    padding-left: 10px;
+    float: left;
+}
+#cooking .course_progress_bar{
+    width: 210px;
+}
+#ballet .course_progress_bar{
+    width: 180px;
+}
+#art .course_progress_bar{
+    width: 260px;
+}
+#course_image{
+    width: 240px;
+    height: 240px;
+    margin-left: 15px;
+}
+#no_upcoming{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 70px;
+    background: #5F5F59;
+    border-radius: 50px;
+}
+#no_upcoming a{
+    color: black;
+}
 
 /*css for payments*/
 #payments_content{

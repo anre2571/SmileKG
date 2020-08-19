@@ -243,6 +243,20 @@ $(document).ready(function(){
           }
     });
 
+    /* link to courses overview page*/
+    $('#see_courses').click(function(){
+        $('#logo').trigger('click');
+        $("#course").trigger('click');
+    })
+
+    /*inteaction with courses*/
+    $('.course').click(function(){
+        $('.course').removeClass('active');
+        $(this).addClass('active');
+        let id = $(this).attr('id');
+        $('#course_image').attr('src', 'dummyPictures/' + id + 'Class.jpg');
+    })
+
 // Attendance
 const date = new Date();
 let check = [];
