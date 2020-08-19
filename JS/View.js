@@ -251,7 +251,10 @@ $(document).ready(function(){
 
     /*inteaction with courses*/
     $('.course').click(function(){
+        $('.course').removeClass('active');
         $(this).addClass('active');
+        let id = $(this).attr('id');
+        $('#course_image').attr('src', 'dummyPictures/' + id + 'Class.jpg');
     })
 
 // Attendance
