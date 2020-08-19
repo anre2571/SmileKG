@@ -335,33 +335,55 @@ button:hover {
     font-size: 16px;
 }
 .abilitynav {
-    background-color: #ffc700;
+    background-color: #353131;
     border: none;
-    color: #353131;
-    margin-bottom: 5px;
-    padding: 25px 22px;
+    color: #ffc700;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 22px;
 }
 .navback{
     display: inline-block;
     background-color: #353131 ;
     width:0px;
     height:0px;
-    border-top: 18px solid transparent;
+    border-top: 9px solid transparent;
     border-right: 15px solid #ffc700;
-    border-bottom: 18px solid transparent;
+    border-bottom: 9px solid transparent;
 }
 .navforward{
     background-color: #353131 ;
     display: inline-block;
     width:0px;
     height:0px;
-    border-top: 18px solid transparent;
-    border-bottom: 18px solid transparent;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
     border-left: 15px solid #ffc700;
+}
+.navback:hover, .navforward:hover{
+    animation: move-abilitynav 1.5s ease-out infinite;
+}
+@keyframes move-abilitynav {
+    15% {
+        opacity: 1;
+    }
+    33.3% {
+        opacity: 0.5;
+        /*
+        transform: translateY(calc(var(--base) * 0.5));
+        */
+    }
+    66.6% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 table {
@@ -391,9 +413,12 @@ tr:nth-child(even) {background-color: #e5e5e5;}
     display:none;
 }
 
+/* The container */
 .container {
     display: block;
     position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
     cursor: pointer;
     font-size: 22px;
     -webkit-user-select: none;
@@ -413,7 +438,7 @@ tr:nth-child(even) {background-color: #e5e5e5;}
 
 /* Create a custom checkbox */
 .checkmark {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     height: 25px;
@@ -423,7 +448,7 @@ tr:nth-child(even) {background-color: #e5e5e5;}
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-    background-color: #ccc;
+    background-color: #595959;
 }
 
 /* When the checkbox is checked, add a blue background */
@@ -449,7 +474,7 @@ tr:nth-child(even) {background-color: #e5e5e5;}
     top: 5px;
     width: 5px;
     height: 10px;
-    border: #353531;
+    border: solid #353531;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
