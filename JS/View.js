@@ -298,7 +298,6 @@ function showAttendance(){
     } else if ((datelist[x].innerText!=date.getDate()) && ($("ul.days>li").eq(x).hasClass("today"))) {
       $("ul.days>li").eq(x).removeClass('today');
     }
-
     }
   }
   // Leave form is shown for days after today.
@@ -324,72 +323,73 @@ function showAttendance(){
   }
   // Get the input data(date) from leave form.
   function getAbsentDate(){
-    let leaveFromDate = document.getElementById('from-date').value;
+    // let leaveFromDate = document.getElementById('from-date').value;
     let leaveFromTime = document.getElementById('from-time').value;
-    let leaveToDate = document.getElementById('to-date').value;
+    // let leaveToDate = document.getElementById('to-date').value;
     let leaveToTime = document.getElementById('to-time').value;
   }
 
   // When the 'form' image clicked, pop-up window of leave form is shown
 function writeForm(){
-$('.form-img').click(function(){
-    $('.modal-wrap').css('display','inline-block');
-    modalWidth();
-    let elofForm = $(this).parent(); //form-overlay
-    out = $(this);
-    // console.log(out);
-    // console.log(out.parent());
-    // console.log(out.parent().parent().text());
-    // console.log(elofForm);
-    let elofLi= elofForm.parent();   //form-show
-    thedate=out.parent().parent().text();
-    elofLi.addClass("data-"+thedate);  //li(form-show)에 숫자넣음.
+    $('body').on('click', '.form-img',function(){
+        $('.modal-wrap').css('display','inline-block');
+        modalWidth();
+        let elofForm = $(this).parent(); //form-overlay
+        out = $(this);
+        let elofLi= elofForm.parent();   //form-show
+        thedate=out.parent().parent().text();
+        elofLi.addClass("data-"+thedate);  //li(form-show)에 숫자넣음.
+    })
 
-})
-
-  $('body').on('click', '#submit',function() {
-  $('.modal-wrap').css('display','none');
-  out.parent().parent().removeClass('form-show');
-  out.parent().parent().addClass('absent');
-  out.parent().parent().append('<img class=absent-img src="dummyPictures/attendance/absent.png">');
-  out.parent().remove(); //form-overlay지움....
+    $('body').on('click', '#submit',function() {
+    $('.modal-wrap').css('display','none');
+    out.parent().parent().removeClass('form-show');
+    out.parent().parent().addClass('absent');
+    out.parent().parent().append('<img class=absent-img src="dummyPictures/attendance/absent.png">');
+    out.parent().remove(); //form-overlay지움....
 
 
-  // getAbsentDate();
-  let leaveFromDate = document.getElementById('from-date').value;
-  let leaveFromTime = document.getElementById('from-time').value;
-  let leaveToDate = document.getElementById('to-date').value;
-  let leaveToTime = document.getElementById('to-time').value;
+    let leaveFromTime = document.getElementById('from-time').value;
+    let leaveToTime = document.getElementById('to-time').value;
 
-  //Input data(date) from the leave-form is stored in the object.
-  absentDates[thedate] =  { 'leaveFromDate': leaveFromDate,
-                                'leaveFromTime': leaveFromTime,
-                                'leaveToDate' : leaveToDate,
-                                'leaveToTime' : leaveToTime};
-  elofForm = undefined;
-  elofLi = undefined;
-});
-$('body').on('click', '.absent-img',function() {
-  out=$(this);
-  thedate=out.parent().text();
-    $('.confirm-wrap').css('display','inline-block');
-    modalWidth();
+      absentDates[thedate] =  {
+                                  'leaveFromTime': leaveFromTime,
+                                  'leaveToTime' : leaveToTime};
+    elofForm = undefined;
+    elofLi = undefined;
+    });
+    //pop-up modal closed when 'close' clicked
     $('.close').click(function(){
-       $('.confirm-wrap').css('display','none');
-    })
-    $("ul.days>li").each(function(index, element){
-    //  if("data-" + thedate == element.classList[0]){
-        $('.confirm-from-date').empty();
-        $('.confirm-from-time').empty();
-        $('.confirm-to-date').empty();
-        $('.confirm-to-time').empty();
+        $('.modal-wrap').css('display','none');
+    });
 
-        $('.confirm-from-date').append('<span class=ab-date>'+absentDates[thedate]['leaveFromDate']+'</span>');
-        $('.confirm-from-time').append('<span class=ab-date>'+absentDates[thedate]['leaveFromTime']+'</span>');
-        $('.confirm-to-date').append('<span class=ab-date>'+absentDates[thedate]['leaveToDate']+'</span>');
-        $('.confirm-to-time').append('<span class=ab-date>'+absentDates[thedate]['leaveToTime']+'</span>');
-    })
+    $('body').on('click', '.absent-img',function() {
+      out=$(this);
+      thedate=out.parent().text();
+        $('.confirm-wrap').css('display','inline-block');
+        modalWidth();
+        $('.close').click(function(){
+           $('.confirm-wrap').css('display','none');
+        })
+        $("ul.days>li").each(function(index, element){
+            $('.confirm-from-time').empty();
+            $('.confirm-to-time').empty();
+            $('.confirm-from-time').append('<span class=ab-date>'+absentDates[thedate]['leaveFromTime']+'</span>');
+            $('.confirm-to-time').append('<span class=ab-date>'+absentDates[thedate]['leaveToTime']+'</span>');
+        })
 
+        $('body').on('click', '#cancel',function() {
+            console.log(this);
+            console.log(out);
+            out.parent().removeClass('absent');
+            out.parent().removeClass('data-'+thedate);
+            out.parent().addClass('form-show');
+            absentDates[thedate] = null;
+            out.parent().append('<div class=form-overlay><img class=form-img src="dummyPictures/attendance/form.png"></div>')
+            out.remove(); //remove the image.
+            console.log(absentDates[thedate]);
+            $('.confirm-wrap').css('display','none');
+        })
 });
 };
 
@@ -397,16 +397,8 @@ getAttendance();
 showAttendance();
 showForm();
 writeForm();
-//pop-up modal closed when 'close' clicked
-$('.close').click(function(){
-   $('.modal-wrap').css('display','none');
-})
 
-// $(window).resize(
-//   function(){
-//     modalWidth();
-//   }
-// )
+
 $(window).resize(function(){
     modalWidth();
   }

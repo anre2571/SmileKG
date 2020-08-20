@@ -149,7 +149,7 @@ css for feedback*/
 }
 #percentage{
     position: absolute;
-    background: #4674A4;
+    background: #4AAB32;
     height: 100%;
     color:#ffffff;
     text-align: center;
@@ -163,22 +163,23 @@ css for feedback*/
     width: 100%;
 }
 .inquiry{
-  width: 70%;
-  height: 60px;
-  margin: 0 auto;
-  padding: 35px;
+    width: 70%;
+    height: 120px;
+    margin: 0 auto;
+    padding-top: 35px;
     color:white;
 }
 .ask{
+    color:#ffffff;
     font-size: 20px;
 }
 .response{
   width: 500px;
-  height: 200px;
+  height: 80px;
   margin: 0 auto;
 }
 .face-wrap{
-    margin-top: 50px;
+
     width: 500px;
     height:70px;
 }
@@ -191,25 +192,23 @@ css for feedback*/
 .arrow{
   cursor: pointer;
 }
-#arrow-left, arrow-L {
+#arrow-left{
   display: inline-block;
   width:0px;
   height:0px;
   border-top: 18px solid transparent;
-  border-right: 15px solid #ffc700;
+  border-right: 15px solid white;
   border-bottom: 18px solid transparent;
-  margin-bottom: 12px;
-  margin-right:8px;
+  margin-right:250px;
 }
-#arrow-right, arrow-R {
+#arrow-right{
   display: inline-block;
   width:0px;
   height:0px;
   border-top: 18px solid transparent;
   border-bottom: 18px solid transparent;
-  border-left: 15px solid #ffc700;
-  margin-left: 8px;
-  margin-bottom: 12px;
+  border-left: 15px solid white;
+  margin-left: 250px;
 }
 
 /*css for courses*/
@@ -759,18 +758,22 @@ ul{
  text-align: center;
  height: 80%;
  width: inherit;
- margin-bottom: 10%;
- overflow: scroll;
+ /*margin-bottom: 10%;*/
+    margin-top: 5%;
+    margin-bottom: 10px;
+ overflow: auto;
 }
 /* Month */
 .month{
-  padding: 10px 25px;
+  padding: 15px 0;
   text-align: center;
   width: 80%;
-  background: #87BAD4;
+  background: #595959;
   margin-top: 5%;
   margin-left: auto;
   margin-right: auto;
+    /*border-top-left-radius: 8px;*/
+    /*border-top-right-radius: 8px;*/
 }
 /* Month list */
 .month ul li{
@@ -779,14 +782,19 @@ ul{
   text-transform: uppercase;
   letter-spacing: 3px;
 }
-
+.month-name{
+    margin-right:45px;
+}
 .month .prev{
   float:left;
-  padding-top:10px;
+  /*padding-top:10px;*/
 }
 .month .next{
   float: right;
-  padding-top: 10px;
+  /*padding-top: 10px;*/
+}
+#month-title{
+    color: #ffffff;
 }
 .weekdays{
   width: 80%;
@@ -807,8 +815,10 @@ ul{
   padding:10px 0;
   /* background: #eee; */
   margin:0 auto;
-  overflow: scroll;
+  /*overflow: scroll;*/
   background-color: #eee;
+    /*border-bottom-left-radius: 8px;*/
+    /*border-bottom-right-radius: 8px;*/
 }
 .days li{
   list-style-type:none;
@@ -823,7 +833,7 @@ ul{
 }
 .today{
   padding:5px;
-  background: #87BAD4;
+  background: #4AAB32;
   color: white !important;
 }
 .next-date, .prev-date{
@@ -860,10 +870,10 @@ ul{
   left:0;
   bottom:0;
   right:0;
-
+  max-height:auto;
   width: 100%;
   opacity:0;
-  background-color: #FA4163;
+  background-color: #4AAB32;
   transition: .2s ease;
 }
 .form-img{
@@ -898,46 +908,56 @@ ul{
   background-color: rgba(35,35,35,0.9);
 }
 .modal-form{
-  width:420px;
-  height:230px;
+  width:400px;
+  height:260px;
   background-color: #DEDEDE;
   margin: 15% auto auto auto;
   opacity:1;
 }
 .confirm-form{
-  width:420px;
-  height:230px;
-  padding: 10%;
+  width:400px;
+  height:180px;
+  padding-top: 10px;
+    padding-left:20px;
+
   background-color: #DEDEDE;
   margin: 15% auto auto auto;
   opacity:1;
 }
 .leave-form{
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 10px;
   text-align: left;
 }
 .leave-reason{
-  margin:10px;
+  margin-top:10px;
 }
 .modal-box{
   /* display:inline-block; */
-  text-align: right;
+  /*text-align: right;*/
   margin-top:10px;
 }
 #leave-reason{
+    width: 200px;
   line-height: 40px;
   margin-bottom: 10px;
+    margin-left: 8px;
 }
 #submit{
   text-align: right;
+    margin-right: 10px;
+
+}
+#cancel{
+    text-align: right;
+    margin-right: 30px;
 
 }
 .close{
-  position:absolute;
-  right:10px;
-  color:#f1f1f1;
-  font-size:28px;
+  position:relative;
+  margin-left:340px;
+  color:#000000;
+  font-size:24px;
   font-weight:bold;
   transition:0.3s;
 }
@@ -954,4 +974,18 @@ ul{
 }
 .to{
   margin-top: 5px;
+}
+#from-time{
+    margin-left:25px;
+}
+#to-time{
+    margin-left:50px;
+}
+.confirm-from-time{
+    display:inline-block;
+    margin-left: 20px;
+}
+.confirm-to-time{
+    display:inline-block;
+    margin-left: 46px;
 }
