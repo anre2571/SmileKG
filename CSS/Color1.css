@@ -31,7 +31,7 @@
     --tile-hover-txt: var(--dark-text);
 
     --tile-active-bg: var(--brightest);
-    --tile-active-txt: var(--dark-text);
+    --tile-active-txt: black;
     --grid-gap: 0;
 }
 
