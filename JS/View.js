@@ -63,11 +63,11 @@ $(document).ready(function(){
         $('#login').click(function() {
             resetCSS();
 
-            if($("#login").text() === "LOGIN"){
-                $("#login").text("LOGOUT");
+            if($("#login").text() === "登录"){
+                $("#login").text("登出");
 
             } else{
-                $("#login").text("LOGIN");
+                $("#login").text("登录");
                 $( "#logo" ).trigger( "click" );
                 $("#goto_myhome_section").hide();
                 return;
@@ -82,7 +82,7 @@ $(document).ready(function(){
         $('#logo, #general_homepage, #go_to_home_title').click(function() {
 
             resetCSS();
-            if($("#login").text() === "LOGOUT"){
+            if($("#login").text() === "登出"){
                 //add my home button
                 $("#goto_myhome_section").show();
             }
