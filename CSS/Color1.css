@@ -86,6 +86,7 @@
 #schedule{
     background: var(--tile-bg2);
     color: var(--tile-txt2);
+    z-index: 2;
 }
 #restaurant{
     background: var(--tile-bg1);

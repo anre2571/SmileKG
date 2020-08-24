@@ -10,7 +10,7 @@
     transition-timing-function: ease-out;
 }
 #left,#middle,#right{
-    transition: flex-grow .2s;
+    transition: flex-grow .3s;
     transition-timing-function: ease-out;
 }
 

@@ -60,6 +60,12 @@ myhome{
     justify-content: center;
     align-items: center;
 }
+#left>*:hover, #right>*:hover {
+    transition: .5s ease;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
 .content_view_close{
     background-image: url(../dummyPictures/close.png);
     background-size: contain;
@@ -166,7 +172,9 @@ grid-area: cute_baby;
 color:white;
 background-image: url("../dummyPictures/cute baby.png");
 background-size: cover;
+    background-position: center;
 }
+
 #courses{
 grid-area: courses;
 background-color: #FFC700;
@@ -196,4 +204,5 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 background-color: #353531;
+    z-index: 2;
 }

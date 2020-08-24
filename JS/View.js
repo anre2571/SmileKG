@@ -12,6 +12,26 @@ let out;
 let thedate;
 
 $(document).ready(function(){
+
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.ml6 .letters');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+    anime.timeline({loop: true})
+        .add({
+            targets: '.ml6 .letter',
+            translateY: ["0.5em", 0],
+            translateZ: 0,
+            duration: 750,
+            delay: (el, i) => 50 * i
+        }).add({
+        targets: '.ml6',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1000
+    });
+
     /*Show only main home on launch*/
     $("main").show();
     $("myhome").hide();
@@ -19,15 +39,21 @@ $(document).ready(function(){
     $("#goto_myhome_section").hide();
 
 
-
-
     $('#right>*,.right>* , #left>*,.left>*').click(function(event){
         if($(this).hasClass('no_content')) return;
 
+        //special check for click on notifications section/sub divs
+        if( event.target.classList.toString().search("notification") > -1 || event.target.id.search("notification") > -1){
+            event.target = $("#notifications")[0];
+        }
+
         //special check for click on inner section/sub divs
-        if(!event.target.id){
-            let parentElement = event.target.parentElement.parentElement;
-            event.target = parentElement;
+        else if(!event.target.id){
+
+                let parentElement = event.target.parentElement.parentElement;
+                event.target = parentElement;
+
+
         }
        /*choose which section to display*/
         let choice = '#'+ event.target.id + '_content'; //construct id of section to be displayed

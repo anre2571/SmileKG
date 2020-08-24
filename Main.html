@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/MainLayout.css">
     <link id = "color" rel="stylesheet" type="text/css" href="CSS/Color1.css">
     <link rel="stylesheet" type="text/css" href="CSS/Content.css">
@@ -18,13 +18,21 @@
   <body>
   <div id = wrapper>
     <header>
-      <div id = logo></div>
+      <div id = logo>
+        <h1 class="ml6">
+          <span class="text-wrapper">
+            <span class="letters">Smile School</span>
+          </span>
+        </h1>
+      </div>
       <div id = switch_campus>
 
         <div id = switch_campus_options>
-          <div id="goto_myhome_section">
-            <div id="goto_myhome"></div>
+          <div id="goto_myhome_section" >
+            <div id="goto_myhome_sub">
+            <div id="goto_myhome" ></div>
             <span id="goto_myhome_title">我的个人网页</span>
+            </div>
             <hr class="vertical">
           </div>
 
@@ -36,8 +44,10 @@
           <div class="campuses">校区E</div>
         </div>
         <div id="general_homepage_section">
-          <div id="general_homepage"></div>
+          <div id="goto_home_sub">
+          <div id="general_homepage" ></div>
           <span id="go_to_home_title">回到首页</span>
+            </div>
         </div>
       </div>
 
@@ -158,9 +168,9 @@
   </main>
     <myhome> <!--We should rename the classes/ ids &#45;&#45; too many repeated -->
       <section id = "left">
-        <div id = "profile" class = "flip-text">
+        <div id = "profile" class = "flip-text my_home_section">
           <div class="inner">
-            <div class = "my_home_section front">
+            <div class = " front">
               我的资料
             </div>
             <div class="back">
@@ -169,9 +179,9 @@
           </div>
         </div>
 
-        <div id = "payments" class = "flip-text">
+        <div id = "payments" class = "flip-text my_home_section">
           <div class="inner">
-            <div class = "my_home_section front">
+            <div class = " front">
               我的缴费与合同
             </div>
             <div class="back">
@@ -180,9 +190,9 @@
           </div>
         </div>
 
-        <div id = "feedback" class = "flip-text">
+        <div id = "feedback" class = "flip-text my_home_section">
           <div class="inner">
-            <div class = "my_home_section front">
+            <div class = " front">
               我的调查表
             </div>
             <div class="back">
@@ -233,7 +243,7 @@
                   <div class="mpd_content">好老师</div>
                 </div>
                 <div class="mpd_contents right_aligned">
-                  <div id="edit_profile">编辑档案</div>
+                  <div id="edit_profile" class="butn">编辑档案</div>
 
                 </div>
               </div>
@@ -260,11 +270,11 @@
 
                 <div class = face-wrap>
 
-                  <img id = strongDisagree class = face src = "dummyPictures/face/strongDisagree.png">
-                  <img id = disagree class = face src="dummyPictures/face/disagree.png">
-                  <img id = neutral class = face src="dummyPictures/face/neutral.png">
-                  <img id = agree class = face src="dummyPictures/face/agree.png">
-                  <img id = strongAgree class = face src = "dummyPictures/face/strongAgree.png">
+                  <img id = strongDisagree class = "face butn" src = "dummyPictures/face/strongDisagree.png">
+                  <img id = disagree class = "face butn" src="dummyPictures/face/disagree.png">
+                  <img id = neutral class = "face butn" src="dummyPictures/face/neutral.png">
+                  <img id = agree class = "face butn" src="dummyPictures/face/agree.png">
+                  <img id = strongAgree class = "face butn" src = "dummyPictures/face/strongAgree.png">
 
                 </div>
 
@@ -423,35 +433,35 @@
                 <td>18:46</td>
                 <td>课程登记 (2020 秋季)</td>
                 <td>CNY 15,000</td>
-                <td><button class = "btn">支付</button></td>
+                <td><button class = "btn butn">支付</button></td>
               </tr>
               <tr>
                 <td>21/7/2020</td>
                 <td>11:16</td>
                 <td>秋季班级郊游</td>
                 <td>CNY 1,000</td>
-                <td><button class = "btn">支付</button></td>
+                <td><button class = "btn butn">支付</button></td>
               </tr>
               <tr>
                 <td>01/8/2020</td>
                 <td>09:16</td>
                 <td>伙食费 (2020 秋季)</td>
                 <td>CNY 3,000</td>
-                <td><button class = "btn">支付</button></td>
+                <td><button class = "btn butn">支付</button></td>
               </tr>
               <tr>
                 <td>04/8/2020</td>
                 <td>18:35</td>
                 <td>周末亲子活动</td>
                 <td>CNY 500</td>
-                <td><button class = "btn">支付</button></td>
+                <td><button class = "btn butn">支付</button></td>
               </tr>
               <tr>
                 <td>12/8/2020</td>
                 <td>14:18</td>
                 <td>户外活动</td>
                 <td>CNY 1,200</td>
-                <td><button class = "btn">支付</button></td>
+                <td><button class = "btn butn">支付</button></td>
               </tr>
             </table>
             <br>
@@ -474,35 +484,35 @@
                 <td>15:12</td>
                 <td>课程登记 (2020 秋季)</td>
                 <td>CNY 15,000</td>
-                <td><button class = "btn">下载</button></td>
+                <td><button class = "btn butn">下载</button></td>
               </tr>
               <tr>
                 <td>21/7/2020</td>
                 <td>05:18</td>
                 <td>秋季郊游</td>
                 <td>CNY 1,000</td>
-                <td><button class = "btn">下载</button></td>
+                <td><button class = "btn butn">下载</button></td>
               </tr>
               <tr>
                 <td>01/8/2020</td>
                 <td>10:11</td>
                 <td>伙食费</td>
                 <td>CNY 3,000</td>
-                <td><button class = "btn">下载</button></td>
+                <td><button class = "btn butn">下载</button></td>
               </tr>
               <tr>
                 <td>04/8/2020</td>
                 <td>12:12</td>
                 <td>周末烹饪活动</td>
                 <td>CNY 500</td>
-                <td><button class = "btn">下载</button></td>
+                <td><button class = "btn butn">下载</button></td>
               </tr>
               <tr>
                 <td>12/8/2020</td>
                 <td>08:41</td>
                 <td>户外活动</td>
                 <td>CNY 1,200</td>
-                <td><button class = "btn">下载</button></td>
+                <td><button class = "btn butn">下载</button></td>
               </tr>
             </table>
 
@@ -759,9 +769,9 @@
       </section>
 
       <section id = "right">
-        <div id = "cute_baby" class = "flip-text">
+        <div id = "cute_baby" class = "flip-text my_home_section right_section">
           <div class="inner">
-            <div class = "my_home_section right_section front">
+            <div class = " front">
               萌宝档案
             </div>
             <div class="back">
@@ -770,9 +780,9 @@
           </div>
         </div>
 
-        <div id = "courses" class = "flip-text">
+        <div id = "courses" class = "flip-text my_home_section right_section">
           <div class="inner">
-            <div class = "my_home_section right_section front">
+            <div class = " front">
               我的报课
             </div>
             <div class="back">
@@ -781,9 +791,9 @@
           </div>
         </div>
 
-        <div id = "attendance" class = "flip-text">
+        <div id = "attendance" class = "flip-text my_home_section right_section">
           <div class="inner">
-            <div class = "my_home_section right_section front">
+            <div class = " front">
               我的考勤
             </div>
             <div class="back">
@@ -814,9 +824,9 @@
             </div>
         </div>
 
-        <div id = "mycontact" class = "flip-text">
+        <div id = "mycontact" class = "flip-text my_home_section right_section">
           <div class="inner">
-            <div  class = "my_home_section right_section front">
+            <div  class = " front">
               联系我们
             </div>
             <div class="back">

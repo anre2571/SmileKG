@@ -58,23 +58,22 @@ main{
     background-image: url(../dummyPictures/home.png);
     background-size: contain;
     background-repeat: no-repeat;
-    width: 10%;
+    width: 5%;
     height: 55%;
     cursor: pointer;
 
 }
 #go_to_home_title{
     cursor: pointer;
+    font-size: x-large;
 
 }
 #general_homepage_section{
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+
 }
+
 #goto_myhome{
     background-image: url(../dummyPictures/mypage.png);
     background-size: contain;
@@ -82,8 +81,9 @@ main{
     width: 100%;
     height: 70%;
     flex:0.5;
-    min-height: 80px;
-    min-width:80px;
+    min-height: 70px;
+    min-width:70px;
+
 }
 #goto_myhome_title{
     display: flex;
@@ -93,7 +93,7 @@ main{
 #goto_myhome_section{
     width: 22%;
     height: 100%;
-    margin-right: 5%;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,6 +103,7 @@ main{
 .campuses{
     flex:1;
     font-weight: normal;
+    transition: transform 1s ; /* Animation */
 }
 hr.vertical{
 
@@ -110,6 +111,7 @@ hr.vertical{
     border-left:    1px solid hsla(200, 10%, 50%,100);
     height:         80%;
     width:          1px;
+    margin-left: 10%;
 }
 
 .left{
@@ -194,7 +196,9 @@ hr.vertical{
     grid-area: logo;
     cursor: pointer;
 
+
 }
+
 #switch_campus{
     grid-area: switch_campus;
     display: flex;
@@ -207,6 +211,10 @@ hr.vertical{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .2s ease-in;
+}
+#login:hover{
+  background: rgba(241, 241, 241, 0.1);
 }
 #news{
     grid-area: news;
@@ -272,10 +280,10 @@ hr.vertical{
 }
 
 #logo{
-    background-image: url("../dummyPictures/logo.png");
+   /* background-image: url("../dummyPictures/logo.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: contain;*/
 }
 
 #carousel{
@@ -290,4 +298,113 @@ hr.vertical{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+
+/*simple animations*/
+
+/*Logo*/
+.ml6 {height:100%;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.75em;
+    color:#FFC805;
+//font-size: 1.45vw;
+    min-width:160px !important;
+}
+
+.ml6 .text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: Brush Script MT;
+
+}
+
+.ml6 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+/*
+Home icon*/
+
+.butn:hover {
+    display: inline-block;
+    position: relative;
+    -moz-animation: bounce 0.5s infinite linear;
+    -o-animation: bounce 0.5s infinite linear;
+    -webkit-animation: bounce 0.5s infinite linear;
+    animation: bounce 0.5s infinite linear;
+
+}
+
+@-webkit-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-moz-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-o-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@-ms-keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+@keyframes bounce {
+    0% { top: 0; }
+    50% { top: -0.2em; }
+    70% { top: -0.3em; }
+    100% { top: 0; }
+}
+
+#goto_myhome_sub{
+    transition: transform 1s ; /* Animation */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin-right: 5%;
+}
+#goto_myhome_sub:hover{
+    transform: scale(1.15);
+    cursor: pointer;
+
+}
+#goto_home_sub{
+    height:80%;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s;
+}
+#goto_home_sub:hover{
+transform: scale(1.15);
+}
+.campuses:hover{
+    transform: scale(1.5);
+    cursor: pointer;
+}
+.left>*:hover, .right>*:not(#cute_baby):hover {
+    transition: .5s ease;
+    opacity: 0.7;
+    cursor: pointer;
 }

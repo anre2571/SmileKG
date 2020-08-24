@@ -16,7 +16,7 @@ div[contenteditable="true"] {
     background: grey;
     border-radius: 5px;
     height: 85%;
-    padding-top: 3%;
+    padding-margin-top: 3%;
 }
 
 #profile_content{
@@ -54,6 +54,7 @@ div[contenteditable="true"] {
     background-image: url("../dummyPictures/Yifan_Wu24.jpg");
     background-size:contain;
     background-repeat: no-repeat;
+    border-radius: 5px;
 }
 #my_profile_name{
     height:10%;
@@ -72,6 +73,7 @@ div[contenteditable="true"] {
     background-image: url("../dummyPictures/qr.png");
     background-repeat: no-repeat;
     background-size: contain;
+    border-radius: 5px;
 }
 #my_profile_details{
     color: white;
@@ -870,7 +872,7 @@ ul{
   left:0;
   bottom:0;
   right:0;
-  max-height:auto;
+
   width: 100%;
   opacity:0;
   background-color: #4AAB32;
