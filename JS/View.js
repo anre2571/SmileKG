@@ -24,9 +24,10 @@ $(document).ready(function(){
     $('#right>*,.right>* , #left>*,.left>*').click(function(event){
         if($(this).hasClass('no_content')) return;
 
-        //special check for click on notifications section/sub divs
-        if(!event.target.id || event.target.id.search("notification") > -1){
-            event.target = $("#notifications")[0];
+        //special check for click on inner section/sub divs
+        if(!event.target.id){
+            let parentElement = event.target.parentElement.parentElement;
+            event.target = parentElement;
         }
        /*choose which section to display*/
         let choice = '#'+ event.target.id + '_content'; //construct id of section to be displayed
