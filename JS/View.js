@@ -39,7 +39,13 @@ $(document).ready(function(){
     $("#goto_myhome_section").hide();
 
 
-    $('#right>*,.right>* , #left>*,.left>*').click(function(event){
+    $('.right>* , .left>*').click(function(event) {
+        if (!$('.middle').hasClass('content_view') || $(this).hasClass('active')) {
+            changeMode($(this));
+        }
+        toggleActive($(this));
+    });
+    $('#right>*, #left>*').click(function(event){
         if($(this).hasClass('no_content')) return;
 
         //special check for click on notifications section/sub divs

@@ -49,7 +49,7 @@ main{
 #switch_campus_options {
 
     display: flex;
-    width: 90%;
+    width: 100%;
     height: 100%;
     flex-direction: row;
     align-items: center;
@@ -93,12 +93,15 @@ main{
 #goto_myhome_section{
     width: 22%;
     height: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
     align-content: center;
     cursor: pointer;
+    background-color: #C49D12;
+}
+#goto_myhome_section:hover{
+    background: rgba(241,241,241, 0.1);
 }
 .campuses{
     flex:1;
@@ -109,7 +112,7 @@ hr.vertical{
 
     border:         none;
     border-left:    1px solid hsla(200, 10%, 50%,100);
-    height:         80%;
+    height:         70%;
     width:          1px;
     margin-left: 10%;
 }
@@ -375,7 +378,7 @@ Home icon*/
 }
 
 #goto_myhome_sub{
-    transition: transform 1s ; /* Animation */
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -383,13 +386,15 @@ Home icon*/
     margin-right: 5%;
 }
 #goto_myhome_sub:hover{
-    transform: scale(1.15);
+
     cursor: pointer;
 
 }
 #goto_home_sub{
     height:80%;
     width:100%;
+    padding:1%;
+    margin-top:1%;
     display: flex;
     flex-direction: row;
     justify-content: center;
