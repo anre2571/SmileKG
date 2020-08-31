@@ -436,6 +436,29 @@ $(window).resize(function(){
     modalWidth();
   }
 )
+
+    $(".dailyData").hide();
+    $(".physicalDev").hide();
+    $(".abilities").show();
+
+    $(".navbtnDaily").click(function(){
+        $(".dailyData").show();
+        $(".physicalDev").hide();
+        $(".abilities").hide();
+    });
+
+    $(".navbtnAbility").click(function(){
+        $(".dailyData").hide();
+        $(".physicalDev").hide();
+        $(".abilities").show();
+    });
+
+    $(".navbtnPhsysical").click(function() {
+        $(".dailyData").hide();
+        $(".physicalDev").show();
+        $(".abilities").hide();
+    });
+
 })
 
 $(document).keypress(function(e) {
