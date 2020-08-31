@@ -97,7 +97,7 @@ $(document).ready(function(){
             resetCSS();
 
             if($("#login").text() === "登录"){
-                $("#login").text("登出");
+                $("#login").text("退出");
 
             } else{
                 $("#login").text("登录");
@@ -115,7 +115,7 @@ $(document).ready(function(){
         $('#logo, #general_homepage, #go_to_home_title').click(function() {
 
             resetCSS();
-            if($("#login").text() === "登出"){
+            if($("#login").text() === "退出"){
                 //add my home button
                 $("#goto_myhome_section").show();
             }
@@ -198,25 +198,25 @@ $(document).ready(function(){
     let QDB = {
         "questions":
             [{
-                "question1" : "1.Overall, my child enjoyed his/her experiences at Smile Kindergarten."
+                "question1" : "1.宝宝对幼儿园的总体感受."
             },{
-                "question2" : "2.Overall, my child developed his/her physical skills at Smile Kindergarten."
+                "question2" : "2.宝宝对体育课的总体感受."
             },{
-                "question3" : "3.Overall, my child developed social skills at Smile Kindergarten."
+                "question3" : "3.宝宝对厨艺课的总体感受."
             },{
-                "question4" : "4.Overall, my child enjoyed his/her experiences at Smile Kindergarten."
+                "question4" : "4.宝宝对美术课的总体感受."
             },{
-                "question5" : "5.Overall, my child enjoyed his/her experiences at Smile Kindergarten."
+                "question5" : "5.宝宝对音乐课的总体感受."
             },{
-                "question6" : "6.Overall, my child enjoyed his/her experiences at Smile Kindergarten."
+                "question6" : "6.宝宝对综合球类课的总体感受."
             },{
-                "question7" : "7.Overall, my child enjoyed his/her experiences at Smile Kindergarten."
+                "question7" : "7.宝宝对芭蕾舞课的总体感受."
             },{
-                "question8" : "8.Overall, my child enjoyed his/her experiences at Smile Kindergarten."
+                "question8" : "8.宝宝对音乐剧表演的总体感受."
             },{
-                "question9" : "9.Overall, my child enjoyed his/her experiences at Smile Kindergarten."
+                "question9" : "9.宝宝对建构课的总体感受."
             },{
-                "question10" : "10.Overall, my child enjoyed his/her experiences at Smile Kindergarten."
+                "question10" : "10.宝宝对科学课的总体感受."
             }]
 
     };
@@ -508,28 +508,28 @@ function switchAbility() {
             $(".abilitySocial").css("display", "initial");
             $(".abilityCognitive").css("display", "none");
             $(".abilityLanguage").css("display", "none");
-            $(".abilitynav").text("Social Milestones");
+            $(".abilitynav").text("社交能力");
             break;
         case 2:
             $(".abilityPhysical").css("display", "none");
             $(".abilitySocial").css("display", "none");
             $(".abilityCognitive").css("display", "initial");
             $(".abilityLanguage").css("display", "none");
-            $(".abilitynav").text("Cognitive Milestones");
+            $(".abilitynav").text("常识能力");
             break;
         case 3:
             $(".abilityPhysical").css("display", "none");
             $(".abilitySocial").css("display", "none");
             $(".abilityCognitive").css("display", "none");
             $(".abilityLanguage").css("display", "initial");
-            $(".abilitynav").text("Language Milestones");
+            $(".abilitynav").text("语言能力");
             break;
         default:
             $(".abilityPhysical").css("display", "initial");
             $(".abilitySocial").css("display", "none");
             $(".abilityCognitive").css("display", "none");
             $(".abilityLanguage").css("display", "none");
-            $(".abilitynav").text("Physical Milestones");
+            $(".abilitynav").text("体育能力");
             break;
     }
 
