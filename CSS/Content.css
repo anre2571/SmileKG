@@ -914,11 +914,11 @@ ul{
 }
 #from-time{
     position:relative;
-    left:25px;
+    left:50px;
 }
 #to-time{
     position:relative;
-    left:25px;
+    left:50px;
 }
 .confirm-from-time{
     display:inline-block;
