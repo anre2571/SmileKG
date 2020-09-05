@@ -40,11 +40,17 @@ $(document).ready(function(){
 
 
     $('.right>* , .left>*').click(function(event) {
-        if (!$('.middle').hasClass('content_view') || $(this).hasClass('active')) {
-            changeMode($(this));
+        if (!$('.middle').hasClass('content_view') || $(this).hasClass('active')){
+            changeMode();
         }
         toggleActive($(this));
+        let choice = '#'+ $(this).attr('id') + '_content';
+
+        $('.content>*').hide(); //hide all other divs under content
+        $('.my_home_section').css({"width":"100%","margin":"0%"});
+        $(choice).show(); //show the currently selected section
     });
+
     $('#right>*, #left>*').click(function(event){
         if($(this).hasClass('no_content')) return;
 
