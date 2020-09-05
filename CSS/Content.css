@@ -151,9 +151,9 @@ css for feedback*/
 }
 #percentage{
     position: absolute;
-    background: #4AAB32;
+    background: #FFC805;
     height: 100%;
-    color:#ffffff;
+    color: #353531;
     text-align: center;
     width: 10%;
     padding: 2px 0;
@@ -767,8 +767,8 @@ ul{
 }
 .today{
   padding:5px;
-  background: #4AAB32;
-  color: white !important;
+  background: #FFC805;
+  color: #353531 !important;
 }
 .next-date, .prev-date{
   opacity:0.5;
@@ -807,7 +807,7 @@ ul{
 
   width: 100%;
   opacity:0;
-  background-color: #4AAB32;
+  background-color: #FFC805;
   transition: .2s ease;
 }
 .form-img{
