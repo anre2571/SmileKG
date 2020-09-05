@@ -865,6 +865,7 @@ ul{
 }
 .leave-reason{
   margin-top:10px;
+
 }
 .modal-box{
   /* display:inline-block; */
@@ -875,7 +876,9 @@ ul{
     width: 200px;
   line-height: 40px;
   margin-bottom: 10px;
-    margin-left: 8px;
+    position: relative;
+    left:30px;
+
 }
 #submit{
   text-align: right;
@@ -910,18 +913,20 @@ ul{
   margin-top: 5px;
 }
 #from-time{
-    margin-left:25px;
+    position:relative;
+    left:25px;
 }
 #to-time{
-    margin-left:50px;
+    position:relative;
+    left:25px;
 }
 .confirm-from-time{
     display:inline-block;
-    margin-left: 20px;
+    margin-left: 0px;
 }
 .confirm-to-time{
     display:inline-block;
-    margin-left: 46px;
+    margin-left: 0px;
 }
 
 .checkmark {
