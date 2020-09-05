@@ -39,7 +39,8 @@ $(document).ready(function(){
     $("#goto_myhome_section").hide();
 
 
-    $('.right>* , .left>*').click(function(event) {
+    $('.right>* , .left>*').click(function() {
+        if($(this).hasClass('no_content')) return;
         if (!$('.middle').hasClass('content_view') || $(this).hasClass('active')){
             changeMode();
         }
@@ -52,7 +53,6 @@ $(document).ready(function(){
     });
 
     $('#right>*, #left>*').click(function(event){
-        if($(this).hasClass('no_content')) return;
 
         //special check for click on notifications section/sub divs
         if( event.target.classList.toString().search("notification") > -1 || event.target.id.search("notification") > -1){
